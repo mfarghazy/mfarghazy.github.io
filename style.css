@@ -151,15 +151,16 @@ body {
     margin-bottom: 25px;
 }
 
-/* Penyesuaian Card Perusahaan (Light Mode modern) */
+/* Card Perusahaan - Disamakan dengan .project-card */
 .company-card {
-    background-color: #ffffff; /* Mengubah jadi putih agar seragam dengan kartu proyek */
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
+    background-color: #ffffff; /* Menggunakan putih murni */
+    border: 1px solid #e9ecef;
+    border-radius: 8px; /* Mengikuti radius kartu proyek */
     padding: 30px;
     text-align: left;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Menyamakan shadow dengan .project-card */
-    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Shadow lembut milik proyek */
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 /* Bagian Atas / Identitas Perusahaan */
@@ -168,28 +169,29 @@ body {
     align-items: center;
     gap: 15px;
     margin-bottom: 25px;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 2px solid #eee; /* Mengikuti gaya border bawah header section */
     padding-bottom: 15px;
 }
 
 .company-logo {
     width: 50px;
     height: 50px;
-    border-radius: 8px;
+    border-radius: 6px;
     object-fit: contain;
     background: #f8f9fa;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #e9ecef;
 }
 
 .company-info h3 {
     font-size: 1.3rem;
     margin: 0;
-    color: #111111; /* Teks gelap */
+    color: #111111; /* Judul gelap tebal */
+    font-weight: 600;
 }
 
 .company-location {
     font-size: 0.9rem;
-    color: #64748b;
+    color: #666666; /* Mengikuti teks tagline/bio */
     margin: 3px 0 0 0;
 }
 
@@ -207,7 +209,7 @@ body {
     top: 10px;
     bottom: 10px;
     width: 2px;
-    background-color: #cbd5e1; /* Warna garis abu-abu soft */
+    background-color: #e9ecef; /* Abu-abu terang netral */
 }
 
 .role-item {
@@ -226,13 +228,13 @@ body {
     top: 6px;
     width: 12px;
     height: 12px;
-    background-color: #007bff; /* Warna aksen biru disamakan dengan warna link utama */
-    border: 2px solid #ffffff; /* Border putih agar memotong garis vertikal di belakangnya */
+    background-color: #007bff; /* Biru aksen tombol utama */
+    border: 2px solid #ffffff; /* Memotong garis abu di belakangnya */
     border-radius: 50%;
     z-index: 2;
 }
 
-/* Detail Role */
+/* Detail Role Header */
 .role-header {
     display: flex;
     justify-content: space-between;
@@ -245,26 +247,26 @@ body {
 .role-header h4 {
     font-size: 1.1rem;
     margin: 0;
-    color: #1e293b;
+    color: #111111;
     font-weight: 600;
 }
 
+/* Badge Tanggal */
 .date-badge {
     font-size: 0.8rem;
-    color: #475569;
-    background-color: #f1f5f9; /* Badge tanggal dengan latar abu terang */
+    color: #495057; /* Mengikuti teks tag proyek */
+    background-color: #e9ecef; /* Latar abu-abu tag proyek */
     padding: 4px 12px;
     border-radius: 20px;
-    border: 1px solid #e2e8f0;
     font-weight: 500;
 }
 
-/* Bullet Points */
+/* Bullet Points Deskripsi Kerja */
 .experience-bullets {
     margin: 0;
     padding-left: 20px;
-    color: #475569; /* Warna teks deskripsi yang nyaman dibaca */
-    font-size: 0.92rem;
+    color: #555555; /* Setara dengan warna deskripsi proyek & bio */
+    font-size: 0.9rem; /* Ukuran font disamakan dengan .project-info p */
     line-height: 1.6;
 }
 
