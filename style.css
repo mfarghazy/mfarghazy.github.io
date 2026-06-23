@@ -222,10 +222,10 @@ body {
 .role-item:not(:last-child)::before {
     content: '';
     position: absolute;
-    left: -25px;              /* Sejajar sempurna dengan koordinat left dot */
-    top: 6px;                 /* Mulai persis dari titik teratas dot */
-    width: 12px;              /* Ketebalan disamakan dengan lebar dot (12px) */
-    height: calc(100% + 35px);/* Panjang: tinggi item saat ini + margin-bottom 35px */
+    left: -19px;              /* Diubah: Memusatkan garis persis di tengah dot biru */
+    top: 6px;                 
+    width: 2px;               /* Diubah: Garis dibuat lebih tipis agar tidak menimpa bullet */
+    height: calc(100% + 35px);
     background-color: #e9ecef;
     z-index: 1;
 }
@@ -281,11 +281,12 @@ body {
 /* Badge Tanggal */
 .date-badge {
     font-size: 0.8rem;
-    color: #495057; /* Mengikuti teks tag proyek */
-    background-color: #e9ecef; /* Latar abu-abu tag proyek */
+    color: #495057 !important;       /* Ditambah !important untuk memaksa warna konsisten */
+    background-color: #e9ecef !important; /* Memaksa warna background abu-abu terang */
     padding: 4px 12px;
     border-radius: 20px;
     font-weight: 500;
+    display: inline-block;           /* Ditambahkan agar bentuk pill konsisten (tidak terpotong) */
 }
 
 /* --- Penyesuaian Judul Tengah (Tanpa Garis Bawah) --- */
