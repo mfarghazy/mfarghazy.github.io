@@ -143,14 +143,23 @@ body {
     text-decoration: underline;
 }
 
-/* Card Perusahaan */
+/* Tambahan untuk Subtitle Section */
+.section-subtitle {
+    color: #666;
+    font-size: 0.95rem;
+    margin-top: -20px;
+    margin-bottom: 25px;
+}
+
+/* Penyesuaian Card Perusahaan (Light Mode modern) */
 .company-card {
-    background-color: #1e293b; /* Warna background card */
-    border: 1px solid #334155;
+    background-color: #ffffff; /* Mengubah jadi putih agar seragam dengan kartu proyek */
+    border: 1px solid #e2e8f0;
     border-radius: 12px;
     padding: 30px;
     text-align: left;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Menyamakan shadow dengan .project-card */
+    margin-bottom: 30px;
 }
 
 /* Bagian Atas / Identitas Perusahaan */
@@ -159,7 +168,7 @@ body {
     align-items: center;
     gap: 15px;
     margin-bottom: 25px;
-    border-bottom: 1px solid #334155;
+    border-bottom: 1px solid #e2e8f0;
     padding-bottom: 15px;
 }
 
@@ -168,17 +177,19 @@ body {
     height: 50px;
     border-radius: 8px;
     object-fit: contain;
+    background: #f8f9fa;
+    border: 1px solid #e2e8f0;
 }
 
 .company-info h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin: 0;
-    color: #ffffff;
+    color: #111111; /* Teks gelap */
 }
 
 .company-location {
     font-size: 0.9rem;
-    color: #94a3b8;
+    color: #64748b;
     margin: 3px 0 0 0;
 }
 
@@ -188,7 +199,7 @@ body {
     padding-left: 25px;
 }
 
-/* Garis vertikal penghubung role */
+/* Garis vertikal penanda timeline */
 .roles-timeline::before {
     content: '';
     position: absolute;
@@ -196,16 +207,16 @@ body {
     top: 10px;
     bottom: 10px;
     width: 2px;
-    background-color: #334155;
+    background-color: #cbd5e1; /* Warna garis abu-abu soft */
 }
 
 .role-item {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .role-item:last-child {
-    margin-bottom: 0; /* Menghilangkan margin luar di item terakhir */
+    margin-bottom: 0;
 }
 
 /* Titik/Dot pada setiap role */
@@ -215,8 +226,8 @@ body {
     top: 6px;
     width: 12px;
     height: 12px;
-    background-color: #38bdf8; /* Warna aksen biru muda terang */
-    border: 2px solid #1e293b;
+    background-color: #007bff; /* Warna aksen biru disamakan dengan warna link utama */
+    border: 2px solid #ffffff; /* Border putih agar memotong garis vertikal di belakangnya */
     border-radius: 50%;
     z-index: 2;
 }
@@ -225,33 +236,35 @@ body {
 .role-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .role-header h4 {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     margin: 0;
-    color: #f8fafc;
+    color: #1e293b;
+    font-weight: 600;
 }
 
 .date-badge {
-    font-size: 0.85rem;
-    color: #94a3b8;
-    background-color: #0f172a;
+    font-size: 0.8rem;
+    color: #475569;
+    background-color: #f1f5f9; /* Badge tanggal dengan latar abu terang */
     padding: 4px 12px;
     border-radius: 20px;
-    border: 1px solid #334155;
+    border: 1px solid #e2e8f0;
+    font-weight: 500;
 }
 
 /* Bullet Points */
 .experience-bullets {
     margin: 0;
     padding-left: 20px;
-    color: #cbd5e1;
-    font-size: 0.95rem;
+    color: #475569; /* Warna teks deskripsi yang nyaman dibaca */
+    font-size: 0.92rem;
     line-height: 1.6;
 }
 
