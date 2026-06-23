@@ -196,7 +196,7 @@ body {
 .roles-timeline::before {
     content: '';
     position: absolute;
-    left: 10px;
+    left: 5px;
     top: 10px;
     bottom: 10px;
     width: 5px;
