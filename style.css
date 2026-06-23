@@ -209,7 +209,7 @@ body {
 /* Titik/Dot pada setiap role */
 .role-badge-dot {
     position: absolute;
-    left: -24px;
+    left: -25px;            /* Disesuaikan agar posisinya pas di tengah-tengah garis */
     top: 6px;
     width: 12px;
     height: 12px;
