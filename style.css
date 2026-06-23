@@ -180,21 +180,43 @@ body {
     font-weight: 600;
 }
 
-/* Timeline Internal untuk Banyak Role */
+/* 1. Berikan garis background pada container utama */
 .roles-timeline {
     position: relative;
     padding-left: 25px;
 }
 
-.role-item:not(:last-child)::before {
+/* Buat garis timeline menggunakan ::before pada container */
+.roles-timeline::before {
     content: '';
     position: absolute;
-    left: -20px; 
-    top: 12px; 
-    bottom: -20px; /* Ubah dari -35px menjadi kisaran -15px sampai -20px */
-    width: 10px;    /* Ubah ketebalan jika 12px dirasa terlalu lebar */
+    left: 5px;          /* Sesuaikan agar sejajar di tengah-tengah dot biru */
+    top: 12px;          /* Mulai dari dot biru pertama */
+    bottom: 15px;       /* Berhenti tepat di dot biru terakhir */
+    width: 2px;         /* Ketebalan garis (sesuaikan jika ingin 12px seperti kode lama) */
     background-color: #e9ecef;
     z-index: 1;
+}
+
+/* 2. Hapus atau komentari kode .role-item:not(:last-child)::before yang lama */
+/* .role-item:not(:last-child)::before { ... } */
+
+/* 3. Sesuaikan posisi titik/dot biru agar pas di tengah garis */
+.role-item {
+    position: relative; /* Pastikan ini ada agar posisi dot relatif terhadap item */
+    margin-bottom: 35px;
+}
+
+.role-badge-dot {
+    position: absolute;
+    left: -25px;       /* Sesuaikan koordinat X agar memotong garis dengan pas */
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background-color: #007bff;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    z-index: 2;
 }
 
 /* Titik/Dot pada setiap role */
