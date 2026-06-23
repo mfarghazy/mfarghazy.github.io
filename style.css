@@ -222,10 +222,10 @@ body {
 .role-item:not(:last-child)::before {
     content: '';
     position: absolute;
-    left: -25px;              /* Dikembalikan ke posisi awal */
-    top: 6px;                 
-    width: 12px;              /* Dikembalikan ke ketebalan awal */
-    height: calc(100% + 35px);
+    left: -25px;              /* Sejajar sempurna dengan koordinat left dot */
+    top: 6px;                 /* Mulai persis dari titik teratas dot */
+    width: 12px;              /* Ketebalan disamakan dengan lebar dot (12px) */
+    height: calc(100% + 35px);/* Panjang: tinggi item saat ini + margin-bottom 35px */
     background-color: #e9ecef;
     z-index: 1;
 }
