@@ -186,11 +186,6 @@ body {
     padding-left: 25px;
 }
 
-.role-item {
-    position: relative;
-    margin-bottom: 35px;
-}
-
 .role-item:not(:last-child)::before {
     content: '';
     position: absolute;
