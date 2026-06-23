@@ -3,29 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Data Analisis - Muhammad Farhan</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; background-color: #f4f4f9; color: #333; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h1 { color: #2c3e50; }
-        .project { border-bottom: 1px solid #ddd; padding: 20px 0; }
-        .btn { display: inline-block; background: #3498db; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
-        .btn:hover { background: #2980b9; }
-    </style>
+    <title>Nama Anda - Data Analyst Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<div class="container">
-    <h1>Portofolio Data Analisis</h1>
-    <p>Halo! Selamat datang di halaman portofolio saya. Berikut adalah proyek data analisis yang telah saya kerjakan.</p>
-
-    <div class="project">
-        <h2>Proyek 1: Analisis Data Penjualan (Contoh)</h2>
-        <p>Proyek ini menganalisis tren penjualan menggunakan Python (Pandas/Matplotlib) dan visualisasi datanya disajikan dalam bentuk laporan komprehensif.</p>
+    <header class="profile-container">
+        <img src="avatar.jpg" alt="Foto Profil" class="profile-img">
+        <h1>Nama Anda</h1>
+        <p class="tagline">Data Analyst | Data Storyteller</p>
+        <p class="bio">Saya adalah seorang Data Analyst yang berfokus pada transformasi data mentah menjadi wawasan bisnis yang dapat ditindaklanjuti menggunakan SQL, Python, dan Tableau.</p>
         
-        <a href="https://drive.google.com/file/d/ISI_ID_FILE_ANDA/view?usp=sharing" target="_blank" class="btn">Lihat Laporan PDF (Google Drive)</a>
-    </div>
-</div>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/username" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/username" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:emailanda@email.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </header>
+
+    <main class="portfolio-section">
+        <h2>Proyek Pilihan</h2>
+        
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <img src="project1.png" alt="Thumbnail Proyek 1" class="project-thumb">
+                <div class="project-info">
+                    <h3>Analisis Retensi Pelanggan E-Commerce</h3>
+                    <p>Menganalisis data transaksi pelanggan untuk mengidentifikasi tingkat churn dan memberikan rekomendasi strategi pemasaran.</p>
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>SQL</span>
+                        <span>Tableau</span>
+                    </div>
+                    <a href="#" class="btn-link">Lihat Proyek <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="project2.png" alt="Thumbnail Proyek 2" class="project-thumb">
+                <div class="project-info">
+                    <h3>Prediksi Harga Rumah dengan Machine Learning</h3>
+                    <p>Membangun model regresi untuk memprediksi harga properti berdasarkan fitur geografis dan struktural.</p>
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Scikit-Learn</span>
+                        <span>Exploratory Data Analysis</span>
+                    </div>
+                    <a href="#" class="btn-link">Lihat Proyek <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Nama Anda. Dibuat dengan GitHub Pages.</p>
+    </footer>
 
 </body>
 </html>
