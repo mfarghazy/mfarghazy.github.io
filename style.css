@@ -301,6 +301,106 @@ body {
     margin-bottom: 8px;
 }
 
+/* --- Style untuk Grid Education & Certifications --- */
+
+/* Grid layout untuk Education (2 Kolom) */
+.education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.education-card {
+    padding: 24px;
+    margin-top: 0 !important; /* Reset margin bawaan company-card */
+}
+
+.education-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.edu-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.education-header h3 {
+    font-size: 1.15rem;
+    margin: 0;
+}
+
+.education-header h4 {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 5px 0 0 0;
+    font-weight: normal;
+}
+
+.inline-badge {
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.edu-desc {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.edu-gpa {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Grid layout untuk Certifications (2 Kolom) */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.cert-card {
+    text-align: center;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.cert-card h4 {
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+}
+
+.cert-card p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0 0 15px 0;
+}
+
+/* Responsive untuk layar Handphone/Tablet */
+@media (max-width: 768px) {
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 footer {
     text-align: center;
     margin-top: 60px;
