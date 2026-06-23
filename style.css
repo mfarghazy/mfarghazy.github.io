@@ -1,4 +1,4 @@
-/* Pengaturan Umum */
+/* General Setting */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +13,7 @@ body {
     padding: 40px 20px;
 }
 
-/* Bagian Profil / Header */
+/* Profile Section / Header */
 .profile-container {
     text-align: center;
     max-width: 600px;
@@ -141,6 +141,122 @@ body {
 
 .btn-link:hover {
     text-decoration: underline;
+}
+
+/* Card Perusahaan */
+.company-card {
+    background-color: #1e293b; /* Warna background card */
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: left;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Bagian Atas / Identitas Perusahaan */
+.company-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 15px;
+}
+
+.company-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.company-info h3 {
+    font-size: 1.4rem;
+    margin: 0;
+    color: #ffffff;
+}
+
+.company-location {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin: 3px 0 0 0;
+}
+
+/* Timeline Internal untuk Banyak Role */
+.roles-timeline {
+    position: relative;
+    padding-left: 25px;
+}
+
+/* Garis vertikal penghubung role */
+.roles-timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background-color: #334155;
+}
+
+.role-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.role-item:last-child {
+    margin-bottom: 0; /* Menghilangkan margin luar di item terakhir */
+}
+
+/* Titik/Dot pada setiap role */
+.role-badge-dot {
+    position: absolute;
+    left: -24px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background-color: #38bdf8; /* Warna aksen biru muda terang */
+    border: 2px solid #1e293b;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Detail Role */
+.role-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.role-header h4 {
+    font-size: 1.15rem;
+    margin: 0;
+    color: #f8fafc;
+}
+
+.date-badge {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    background-color: #0f172a;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid #334155;
+}
+
+/* Bullet Points */
+.experience-bullets {
+    margin: 0;
+    padding-left: 20px;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.experience-bullets li {
+    margin-bottom: 8px;
 }
 
 footer {
