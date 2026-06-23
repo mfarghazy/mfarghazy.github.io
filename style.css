@@ -288,73 +288,67 @@ body {
     font-weight: 500;
 }
 
-/* Bullet Points Deskripsi Kerja */
-.experience-bullets {
-    margin: 0;
-    padding-left: 20px;
-    color: #555555; /* Setara dengan warna deskripsi proyek & bio */
-    font-size: 0.9rem; /* Ukuran font disamakan dengan .project-info p */
-    line-height: 1.6;
+/* --- Penyesuaian Judul Tengah (Tanpa Garis Bawah) --- */
+.portfolio-section h2.center-title {
+    text-align: center;
+    border-bottom: none;
+    margin-bottom: 10px;
 }
 
-.experience-bullets li {
-    margin-bottom: 8px;
+/* ================= EDUCATION GRID LAYOUT ================= */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Membagi menjadi 2 kolom */
+    gap: 20px; /* Jarak antar kartu */
 }
 
-/* --- Style untuk Grid Education & Certifications --- */
-
-/* --- Pengaturan Posisi Tanggal Education (Kanan-Kiri) --- */
-.education-title-row {
+/* Mengubah behavior card di dalam grid */
+.education-grid .company-card {
+    margin-top: 0;
+    margin-bottom: 0;
     display: flex;
-    justify-content: space-between; /* Mendorong judul ke kiri, tanggal ke kanan */
-    align-items: flex-start; /* Sejajar di bagian atas */
+    flex-direction: column;
+}
+
+/* Menyejajarkan Logo dan Nama Universitas (Horizontal) */
+.edu-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.edu-header .edu-logo-small {
+    width: 45px; /* Mengatur logo menjadi agak bulat/kotak kecil */
+    height: 45px;
+    object-fit: contain;
+    margin-bottom: 0;
+}
+
+.edu-header h3 {
+    margin: 0 !important;
+    font-size: 1.2rem;
+    line-height: 1.3;
+}
+
+.education-card h4 {
+    font-size: 1rem;
     margin-bottom: 12px;
 }
 
-.edu-logo-small {
-    height: 25px; /* Sesuaikan ukuran logo */
-    margin-bottom: 8px;
+/* Penyesuaian Badge Tanggal (Rata Kiri, bukan di flex sejajar judul) */
+.education-card .date-badge {
+    align-self: flex-start; /* Memastikan badge tetap di kiri */
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    background-color: #333; /* Warna gelap ala gambar referensi */
+    color: #fff; /* Teks putih ala gambar referensi */
+    border-radius: 6px; /* Mengurangi lekukan radius agar seperti referensi */
 }
 
-.edu-titles h3, 
-.edu-titles h4 {
-    margin: 0;
-    line-height: 1.4;
-}
-
-/* Pastikan tanggal tidak turun ke baris baru jika layarnya kecil */
-.education-title-row .date-badge {
-    white-space: nowrap; 
-    margin-left: 15px; /* Memberi jarak jika teks judul terlalu panjang */
-}
-
-/* --- Menyeragamkan Ketebalan Huruf (Bold) di Semua Section --- */
-/* Targetkan semua h3 dan h4 pada section Project, Work Experience, dan Education */
-.project-info h3,
-.company-info h3,
-.role-header h4,
-.edu-titles h3,
-.edu-titles h4 {
-    font-weight: 700 !important; /* Memaksa ketebalan font agar sama persis (Bold) */
-    color: #333; /* Menyeragamkan warna teks menjadi abu-abu gelap kehitaman */
-}
-
-/* Jika ingin memberikan sedikit perbedaan ukuran antara h3 dan h4 agar hierarkinya jelas: */
-.role-header h4,
-.edu-titles h4 {
-    font-size: 1.05rem; 
-    margin-top: 5px; /* Memberi sedikit jarak antara nama instansi dan gelar/role */
-}
-
-/* Responsive untuk layar Handphone: Tanggal turun ke bawah jika layar terlalu sempit */
-@media (max-width: 600px) {
-    .education-title-row {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .education-title-row .date-badge {
-        margin-left: 0;
-    }
+.education-card .date-badge i {
+    margin-right: 6px;
 }
 
 /* Grid layout untuk Certifications (2 Kolom) */
