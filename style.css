@@ -196,10 +196,10 @@ body {
 .roles-timeline::before {
     content: '';
     position: absolute;
-    left: 5px;
+    left: 2.5px;
     top: 10px;
     bottom: 10px;
-    width: 5px;
+    width: 10px;
     background-color: #e9ecef; /* Abu-abu terang netral */
 }
 
