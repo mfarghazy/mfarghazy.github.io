@@ -192,7 +192,7 @@ body {
     left: -20px; 
     top: 12px; 
     bottom: -20px; /* Ubah dari -35px menjadi kisaran -15px sampai -20px */
-    width: 2px;    /* Ubah ketebalan jika 12px dirasa terlalu lebar */
+    width: 10px;    /* Ubah ketebalan jika 12px dirasa terlalu lebar */
     background-color: #e9ecef;
     z-index: 1;
 }
