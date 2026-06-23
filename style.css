@@ -278,6 +278,16 @@ body {
     font-weight: 600;
 }
 
+/* Menggeser bullet point pada Work Experience */
+.experience-bullets {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.experience-bullets li {
+    margin-bottom: 8px;
+}
+
 /* Badge Tanggal */
 .date-badge {
     font-size: 0.8rem;
