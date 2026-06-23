@@ -405,6 +405,67 @@ body {
     }
 }
 
+/* ================= ADD-ON ================= */
+/* Layout untuk Technical Skills */
+.tech-skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    flex-wrap: wrap;
+}
+
+.tech-skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90px;
+}
+
+.tech-skill-item i {
+    font-size: 3rem; /* Ukuran icon besar seperti di referensi */
+    color: #495057; /* Warna abu-abu gelap */
+    margin-bottom: 12px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.tech-skill-item span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Efek saat kursor diarahkan ke icon Technical Skill */
+.tech-skill-item:hover i {
+    transform: translateY(-8px);
+    color: #007bff; /* Berubah menjadi biru */
+}
+
+/* Layout untuk Soft Skills */
+.soft-skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.soft-skill-pill {
+    background-color: #333; /* Warna gelap untuk pill (kontras dengan background terang) */
+    color: #ffffff;
+    padding: 10px 22px;
+    border-radius: 30px; /* Membuat ujungnya sangat melengkung */
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.soft-skill-pill:hover {
+    background-color: #007bff; /* Berubah biru saat di-hover */
+    transform: translateY(-3px);
+}
+
 footer {
     text-align: center;
     margin-top: 60px;
