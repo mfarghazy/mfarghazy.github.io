@@ -186,21 +186,16 @@ body {
     padding-left: 25px;
 }
 
-.roles-timeline::before {
+.role-item:not(:last-child)::before {
     content: '';
     position: absolute;
-    left: 5px;          /* Sesuaikan agar sejajar di tengah-tengah dot biru */
-    top: 12px;          /* Mulai dari dot biru pertama */
-    bottom: 15px;       /* Berhenti tepat di dot biru terakhir */
-    width: 2px;         /* Ketebalan garis (sesuaikan jika ingin 12px seperti kode lama) */
+    left: -20px; 
+    top: 12px; 
+    bottom: -20px; /* Ubah dari -35px menjadi kisaran -15px sampai -20px */
+    width: 2px;    /* Ubah ketebalan jika 12px dirasa terlalu lebar */
     background-color: #e9ecef;
     z-index: 1;
 }
-
-.role-item {
-    position: relative; /* Pastikan ini ada agar posisi dot relatif terhadap item */
-    margin-bottom: 35px;
-    }
 
 /* Titik/Dot pada setiap role */
 .role-badge-dot {
