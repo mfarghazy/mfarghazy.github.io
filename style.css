@@ -355,7 +355,7 @@ body {
     padding: 6px 14px;
     background-color: #333; /* Warna gelap ala gambar referensi */
     color: #fff; /* Teks putih ala gambar referensi */
-    border-radius: 6px; /* Mengurangi lekukan radius agar seperti referensi */
+    border-radius: 20px; /* Mengurangi lekukan radius agar seperti referensi */
 }
 
 .education-card .date-badge i {
