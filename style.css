@@ -173,15 +173,6 @@ body {
     padding-bottom: 15px;
 }
 
-.company-logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 6px;
-    object-fit: contain;
-    background: #f8f9fa;
-    border: 1px solid #e9ecef;
-}
-
 .company-info h3 {
     font-size: 1.3rem;
     margin: 0;
@@ -208,7 +199,7 @@ body {
     left: 10px;
     top: 10px;
     bottom: 10px;
-    width: 2px;
+    width: 5px;
     background-color: #e9ecef; /* Abu-abu terang netral */
 }
 
