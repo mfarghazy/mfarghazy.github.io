@@ -4,43 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Detail - RevoFin</title>
+    <!-- Hubungkan ke Font Awesome untuk ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Menggunakan font dan warna yang sama dengan style.css Anda */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #0b1120; color: #f8f9fa; padding: 30px; }
+        body { background-color: #f8f9fa; color: #333; padding: 30px; line-height: 1.6; }
         
         /* Navigasi Atas */
         .top-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto 40px auto; }
-        .back-link { color: #60a5fa; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+        .back-link { color: #007bff; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
         .back-link:hover { text-decoration: underline; }
-        .btn-open-slides { background-color: #2563eb; color: #fff; padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
-        .btn-open-slides:hover { background-color: #1d4ed8; }
+        
+        .btn-open-slides { background-color: #007bff; color: #fff; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,123,255,0.3); }
+        .btn-open-slides:hover { background-color: #0056b3; transform: translateY(-2px); }
 
         /* Header Judul */
         .detail-header { text-align: center; max-width: 1000px; margin: 0 auto 40px auto; }
-        .detail-header h1 { font-size: 1.8rem; line-height: 1.4; color: #ffffff; }
+        .detail-header h1 { font-size: 1.8rem; line-height: 1.4; color: #111; }
 
         /* Layout Grid */
         .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1200px; margin: 0 auto; }
 
-        /* Kolom Kiri: Gambar dan Info Proyek */
-        .left-column img { width: 100%; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .project-meta-card { background-color: #1e293b; padding: 25px; border-radius: 12px; border: 1px solid #334155; }
-        .project-meta-card h3 { margin-bottom: 15px; font-size: 1.2rem; }
-        .meta-item { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: #cbd5e1; font-size: 0.95rem; }
-        .meta-item i { color: #60a5fa; width: 20px; }
-        .disclaimer { font-size: 0.8rem; color: #94a3b8; font-style: italic; margin-top: 20px; line-height: 1.5; }
+        /* Kolom Kiri: Gambar dan Info Proyek (Desain Kartu Putih) */
+        .left-column img { width: 100%; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        
+        .project-meta-card { background-color: #ffffff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .project-meta-card h3 { margin-bottom: 15px; font-size: 1.2rem; color: #111; }
+        .meta-item { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: #555; font-size: 0.95rem; }
+        .meta-item i { color: #007bff; width: 20px; text-align: center; }
+        .disclaimer { font-size: 0.8rem; color: #888; font-style: italic; margin-top: 20px; line-height: 1.5; }
 
-        /* Kolom Kanan: Deskripsi Proyek */
-        .right-column { background-color: #1e293b; border-radius: 12px; border: 1px solid #334155; overflow: hidden; }
-        .overview-header { background-color: #0f172a; padding: 20px 25px; border-bottom: 1px solid #334155; font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
-        .overview-header i { color: #60a5fa; }
+        /* Kolom Kanan: Deskripsi Proyek (Desain Kartu Putih) */
+        .right-column { background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden; }
+        
+        .overview-header { background-color: #f8f9fa; padding: 20px 25px; border-bottom: 1px solid #eee; font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; color: #111; }
+        .overview-header i { color: #007bff; }
         
         .overview-content { padding: 25px; }
-        .content-section { background-color: #0f172a; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        
+        .content-section { background-color: #fcfcfc; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #eee; }
         .content-section:last-child { margin-bottom: 0; }
-        .content-section h4 { color: #60a5fa; margin-bottom: 10px; font-size: 1.1rem; }
-        .content-section p, .content-section ul { color: #cbd5e1; font-size: 0.95rem; line-height: 1.6; }
+        .content-section h4 { color: #111; margin-bottom: 10px; font-size: 1.1rem; }
+        .content-section p, .content-section ul { color: #555; font-size: 0.95rem; line-height: 1.6; }
         .content-section ul { padding-left: 20px; margin-top: 10px; }
         .content-section li { margin-bottom: 8px; }
 
@@ -53,18 +59,23 @@
 <body>
 
     <nav class="top-nav">
+        <!-- Tautan kembali ke halaman utama portfolio -->
         <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Projects</a>
-        <a href="https://drive.google.com/file/d/1cRyJ2Ip1zUBde_OfIwskFZYSJFbpzaQB/view?usp=drive_link" target="_blank" class="btn-open-slides">
+        
+        <!-- Tautan Google Drive (PDF Slides) -->
+        <a href="https://drive.google.com/file/d/1cRyJ2Ip1zUBde_OfIwskFZYSJFbpzaQB/view?usp=drive_link"_blank" class="btn-open-slides">
             <i class="fas fa-external-link-alt"></i> Open Slides
         </a>
     </nav>
 
     <header class="detail-header">
-        <h1>IndiRevo: Fulfillment Performance and Revenue Leakage Analysis</h1>
+        <h1>RevoFin Loan Risk Analysis (Understanding Cohort Behavior and Key Risk Indicators)</h1>
     </header>
 
     <div class="content-grid">
+        <!-- Bagian Kiri (Gambar & Durasi) -->
         <div class="left-column">
+            <!-- Ganti src ini dengan gambar dari slide presentasi Anda -->
             <img src="slides-preview.png" alt="Slide Preview">
             
             <div class="project-meta-card">
@@ -72,10 +83,11 @@
                 <div class="meta-item"><i class="far fa-clock"></i> Duration: 10 days</div>
                 <div class="meta-item"><i class="fas fa-user-friends"></i> Team: Individual</div>
                 <div class="meta-item"><i class="fas fa-wrench"></i> Tools: SQL, Tableau</div>
-                <p class="disclaimer">*Disclaimer: The project is a part of RevoU Data Insight Project, a 4-week case study designed to analyze customized datasets and address business challenges...</p>
+                <p class="disclaimer">*Disclaimer: The project is a part of RevoU Data Insight Project, a 4-week case study designed to analyze customized datasets and address business challenges, honing analytical and problem-solving skills.</p>
             </div>
         </div>
 
+        <!-- Bagian Kanan (Penjelasan Teks) -->
         <div class="right-column">
             <div class="overview-header">
                 <i class="fas fa-bookmark"></i> Project Overview
@@ -83,14 +95,14 @@
             <div class="overview-content">
                 <div class="content-section">
                     <h4>Background</h4>
-                    <p>[Finance Industry Application] RevoFin conducted a loan portfolio review to assess portfolio health using TKB30 as a key risk indicator. The analysis aimed to identify high-risk cohorts and understand borrower characteristics.</p>
+                    <p>[Finance Industry Application] RevoFin conducted a loan portfolio review to assess portfolio health using TKB30 as a key risk indicator. With $2.801B in Outstanding Loans (OS) and ENR closely aligned, the analysis aimed to identify high-risk cohorts and understand borrower characteristics driving delinquency, particularly related to debt exposure.</p>
                 </div>
                 
                 <div class="content-section">
                     <h4>Method</h4>
                     <ul>
                         <li>Performed cohort-based analysis by segmenting loans into monthly vintages and calculating OS, ENR, and TKB30.</li>
-                        <li>An in-depth profiling was conducted on the lowest-performing cohort, examining borrower income, home ownership, and loan purpose.</li>
+                        <li>An in-depth profiling was conducted on the lowest-performing cohort (April 2014), examining borrower income, home ownership, loan purpose, and interest rates to identify risk drivers.</li>
                     </ul>
                 </div>
 
@@ -98,8 +110,9 @@
                     <h4>Result</h4>
                     <ul>
                         <li><strong>Anomaly Detection:</strong> April 2014 recorded the lowest TKB30 (~93%), driven by a higher share of loans overdue >30 days.</li>
-                        <li><strong>Borrower Profile:</strong> 60% of borrowers were still paying mortgages, increasing debt burden and delinquency risk.</li>
-                        <li><strong>Recommendations:</strong> Strengthen underwriting for debt-related loans and enhance monitoring of highly leveraged borrowers.</li>
+                        <li><strong>Borrower Profile:</strong> 60% of borrowers were still paying mortgages, with only 6.8% fully owning homes, increasing debt burden and delinquency risk.</li>
+                        <li><strong>Recommendations:</strong> Strengthen underwriting for debt-related loans (e.g., debt consolidation) and enhance monitoring of highly leveraged borrowers.</li>
+                        <li><strong>Goal:</strong> Reduce future delinquency risk by improving borrower screening and early risk detection for high-debt segments.</li>
                     </ul>
                 </div>
             </div>
