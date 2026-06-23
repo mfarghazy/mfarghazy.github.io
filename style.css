@@ -180,12 +180,6 @@ body {
     font-weight: 600;
 }
 
-.company-location {
-    font-size: 0.9rem;
-    color: #666666; /* Mengikuti teks tagline/bio */
-    margin: 3px 0 0 0;
-}
-
 /* Timeline Internal untuk Banyak Role */
 .roles-timeline {
     position: relative;
@@ -196,7 +190,7 @@ body {
 .roles-timeline::before {
     content: '';
     position: absolute;
-    left: 2.5px;
+    left: 5px;
     top: 10px;
     bottom: 10px;
     width: 10px;
