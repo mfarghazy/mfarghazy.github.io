@@ -186,24 +186,23 @@ body {
     padding-left: 25px;
 }
 
-/* Garis vertikal penanda timeline */
-.roles-timeline::before {
-    content: '';
-    position: absolute;
-    left: 0px;
-    top: 10px;
-    bottom: 10px;
-    width: 12px;
-    background-color: #e9ecef; /* Abu-abu terang netral */
-}
-
 .role-item {
     position: relative;
     margin-bottom: 35px;
 }
 
-.role-item:last-child {
-    margin-bottom: 0;
+.role-item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    /* Menyejajarkan posisi horizontal tepat di tengah dot biru */
+    left: -20px; 
+    /* Mulai dari tengah dot pertama */
+    top: 12px; 
+    /* Ditarik ke bawah sampai menyentuh dot berikutnya */
+    bottom: -35px; /* Sesuaikan dengan margin-bottom dari .role-item Anda (35px) */
+    width: 12px;
+    background-color: #e9ecef;
+    z-index: 1;
 }
 
 /* Titik/Dot pada setiap role */
