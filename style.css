@@ -188,18 +188,20 @@ body {
 
 /* Buat garis timeline menggunakan ::before pada container */
 .roles-timeline::before {
+    display: none; /* Nonaktifkan garis bawaan container */
+}
+
+/* Menghubungkan masing-masing item, berhenti di item terakhir */
+.role-item:not(:last-child)::before {
     content: '';
     position: absolute;
-    left: 5px;          /* Sesuaikan agar sejajar di tengah-tengah dot biru */
-    top: 12px;          /* Mulai dari dot biru pertama */
-    bottom: 15px;       /* Berhenti tepat di dot biru terakhir */
-    width: 2px;         /* Ketebalan garis (sesuaikan jika ingin 12px seperti kode lama) */
+    left: -25px;              /* Sejajar sempurna dengan koordinat left dot */
+    top: 6px;                 /* Mulai persis dari titik teratas dot */
+    width: 12px;              /* Ketebalan disamakan dengan lebar dot (12px) */
+    height: calc(100% + 35px);/* Panjang: tinggi item saat ini + margin-bottom 35px */
     background-color: #e9ecef;
     z-index: 1;
 }
-
-/* 2. Hapus atau komentari kode .role-item:not(:last-child)::before yang lama */
-/* .role-item:not(:last-child)::before { ... } */
 
 /* 3. Sesuaikan posisi titik/dot biru agar pas di tengah garis */
 .role-item {
@@ -209,12 +211,12 @@ body {
 
 .role-badge-dot {
     position: absolute;
-    left: -25px;       /* Sesuaikan koordinat X agar memotong garis dengan pas */
+    left: -25px;            
     top: 6px;
     width: 12px;
     height: 12px;
-    background-color: #007bff;
-    border: 2px solid #ffffff;
+    background-color: #007bff; 
+    /* border: 2px solid #ffffff; */ /* <-- Comment/Hapus baris ini */
     border-radius: 50%;
     z-index: 2;
 }
