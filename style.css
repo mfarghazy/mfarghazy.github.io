@@ -151,6 +151,33 @@ body {
     margin-bottom: 25px;
 }
 
+/* Penataan Tombol di Kartu Proyek */
+.project-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.btn-slide {
+    display: inline-block;
+    text-decoration: none;
+    color: #495057;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.btn-slide:hover {
+    color: #007bff; /* Berubah biru saat di-hover */
+}
+
+.btn-slide i {
+    margin-right: 5px;
+}
+
 /* Card Perusahaan - Disamakan dengan .project-card */
 .company-card {
     background-color: #ffffff; /* Menggunakan putih murni */
