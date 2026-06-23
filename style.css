@@ -303,59 +303,58 @@ body {
 
 /* --- Style untuk Grid Education & Certifications --- */
 
-/* Grid layout untuk Education (2 Kolom) */
-.education-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.education-card {
-    padding: 24px;
-    margin-top: 0 !important; /* Reset margin bawaan company-card */
-}
-
-.education-header {
+/* --- Pengaturan Posisi Tanggal Education (Kanan-Kiri) --- */
+.education-title-row {
     display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.edu-logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.education-header h3 {
-    font-size: 1.15rem;
-    margin: 0;
-}
-
-.education-header h4 {
-    font-size: 0.95rem;
-    color: #555;
-    margin: 5px 0 0 0;
-    font-weight: normal;
-}
-
-.inline-badge {
-    display: inline-block;
+    justify-content: space-between; /* Mendorong judul ke kiri, tanggal ke kanan */
+    align-items: flex-start; /* Sejajar di bagian atas */
     margin-bottom: 12px;
 }
 
-.edu-desc {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 10px;
+.edu-logo-small {
+    height: 25px; /* Sesuaikan ukuran logo */
+    margin-bottom: 8px;
 }
 
-.edu-gpa {
-    font-size: 0.9rem;
-    color: #333;
+.edu-titles h3, 
+.edu-titles h4 {
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Pastikan tanggal tidak turun ke baris baru jika layarnya kecil */
+.education-title-row .date-badge {
+    white-space: nowrap; 
+    margin-left: 15px; /* Memberi jarak jika teks judul terlalu panjang */
+}
+
+/* --- Menyeragamkan Ketebalan Huruf (Bold) di Semua Section --- */
+/* Targetkan semua h3 dan h4 pada section Project, Work Experience, dan Education */
+.project-info h3,
+.company-info h3,
+.role-header h4,
+.edu-titles h3,
+.edu-titles h4 {
+    font-weight: 700 !important; /* Memaksa ketebalan font agar sama persis (Bold) */
+    color: #333; /* Menyeragamkan warna teks menjadi abu-abu gelap kehitaman */
+}
+
+/* Jika ingin memberikan sedikit perbedaan ukuran antara h3 dan h4 agar hierarkinya jelas: */
+.role-header h4,
+.edu-titles h4 {
+    font-size: 1.05rem; 
+    margin-top: 5px; /* Memberi sedikit jarak antara nama instansi dan gelar/role */
+}
+
+/* Responsive untuk layar Handphone: Tanggal turun ke bawah jika layar terlalu sempit */
+@media (max-width: 600px) {
+    .education-title-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .education-title-row .date-badge {
+        margin-left: 0;
+    }
 }
 
 /* Grid layout untuk Certifications (2 Kolom) */
