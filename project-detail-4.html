@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail - RevoBank Customer Segmentation Analysis</title>
+    <!-- Hubungkan ke Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Menggunakan font dan warna yang sama dengan style.css Anda */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f8f9fa; color: #333; padding: 30px; line-height: 1.6; }
+        
+        /* Navigasi Atas */
+        .top-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto 40px auto; }
+        .back-link { color: #007bff; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .back-link:hover { text-decoration: underline; }
+        
+        .btn-open-slides { background-color: #007bff; color: #fff; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,123,255,0.3); }
+        .btn-open-slides:hover { background-color: #0056b3; transform: translateY(-2px); }
+
+        /* Header Judul */
+        .detail-header { text-align: center; max-width: 1000px; margin: 0 auto 40px auto; }
+        .detail-header h1 { font-size: 1.8rem; line-height: 1.4; color: #111; }
+
+        /* Layout Grid */
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1200px; margin: 0 auto; }
+
+        /* Kolom Kiri: Gambar dan Info Proyek (Desain Kartu Putih) */
+        .left-column img { width: 100%; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        
+        .project-meta-card { background-color: #ffffff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .project-meta-card h3 { margin-bottom: 15px; font-size: 1.2rem; color: #111; }
+        .meta-item { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: #555; font-size: 0.95rem; }
+        .meta-item i { color: #007bff; width: 20px; text-align: center; }
+        .disclaimer { font-size: 0.8rem; color: #888; font-style: italic; margin-top: 20px; line-height: 1.5; }
+
+        /* Kolom Kanan: Deskripsi Proyek (Desain Kartu Putih) */
+        .right-column { background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden; }
+        
+        .overview-header { background-color: #f8f9fa; padding: 20px 25px; border-bottom: 1px solid #eee; font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; color: #111; }
+        .overview-header i { color: #007bff; }
+        
+        .overview-content { padding: 25px; }
+        
+        .content-section { background-color: #fcfcfc; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #eee; }
+        .content-section:last-child { margin-bottom: 0; }
+        .content-section h4 { color: #111; margin-bottom: 10px; font-size: 1.1rem; }
+        .content-section p, .content-section ul { color: #555; font-size: 0.95rem; line-height: 1.6; }
+        .content-section ul { padding-left: 20px; margin-top: 10px; }
+        .content-section li { margin-bottom: 8px; }
+
+        /* Responsif untuk HP */
+        @media (max-width: 768px) {
+            .content-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <!-- Tautan kembali ke halaman utama portfolio -->
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        
+        <!-- Tautan Google Drive (PDF Slides) -->
+        <a href="https://drive.google.com/file/d/11ilKEZANqATB3ypK3zhtboncUJk_o430/view?usp=drive_link"_blank" class="btn-open-slides">
+            <i class="fas fa-external-link-alt"></i> Open Deck
+        </a>
+    </nav>
+
+    <header class="detail-header">
+        <h1>RevoBank Customer Segmentation Analysis</h1>
+    </header>
+
+    <div class="content-grid">
+        <!-- Bagian Kiri (Gambar & Durasi) -->
+        <div class="left-column">
+            <!-- Ganti src ini dengan gambar dari slide presentasi Anda -->
+            <img src="Preview_4.png" alt="Preview">
+            
+            <div class="project-meta-card">
+                <h3>Project Details</h3>
+                <div class="meta-item"><i class="far fa-clock"></i> Duration: 21 Days </div>
+                <div class="meta-item"><i class="fas fa-user-friends"></i> Team: Individual</div>
+                <div class="meta-item"><i class="fas fa-wrench"></i> Tools: Python, Spreadsheet</div>
+                <p class="disclaimer">*Disclaimer: The project is a part of Data End-to-End Portfolio Project (DEEPP)</p>
+            </div>
+        </div>
+
+        <!-- Bagian Kanan (Penjelasan Teks) -->
+        <div class="right-column">
+            <div class="overview-header">
+                <i class="fas fa-bookmark"></i> Overview
+            </div>
+            <div class="overview-content">
+                <div class="content-section">
+                    <h4>Business Background</h4>
+                    <p>IndiRevo suffered a 15.71% financial loss—totaling 13.14M INR out of 83.69M INR in gross revenue—due to operational inefficiencies across B2B bulk and B2C retail segments. Thus, we need to identify root causes of delivery failures and recommend data-driven order routing adjustments to reduce logistical revenue leakage by 10% within two months. </p>
+                </div>
+                
+                <div class="content-section">
+                    <h4>Method</h4>
+                    <ul>
+                        <li>Conducted end-to-end data preparation: missing values, duplicates, account filtering.</li>
+                            <li>Performed EDA on transaction behavior and Debt-to-Income (DTI) metrics.</li>
+                            <li>ustomer segmentation via K-Means clustering utilizing RobustScaler, validating optimal clusters with the Elbow and Silhouette methods.</li>
+                        </ul>
+                </div>
+
+                <div class="content-section">
+                    <h4>Result</h4>
+                    <ul>
+                        <li>Delivered a net profit of Rp 5.83 B with a 0.2% fraud rate. Identified 4 strategic customer personas: High-Value Elites (primary revenue driver at Rp 15.55 M profit/capita), Steady Growth Transactors, Mass Market (largest segment at 54.2%), and a Risk Group (-Rp 595 K net profit/user).</li>       
+                        <li>ormulated targeted product strategies, including premium loyalty programs, micro-transaction campaigns, and credit freezes to mitigate defaults.</li
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
