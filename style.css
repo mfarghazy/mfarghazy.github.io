@@ -16,7 +16,7 @@ body {
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
-    padding: 40px 20px;
+    padding: 0;
 }
 
 /* Profile Section / Header */
@@ -24,6 +24,7 @@ body {
     text-align: center;
     max-width: 600px;
     margin: 0 auto 50px auto;
+    padding: 40px 20px 0 20px;
 }
 
 .profile-img {
@@ -69,6 +70,7 @@ body {
 .portfolio-section {
     max-width: 900px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .portfolio-section h2 {
@@ -477,6 +479,7 @@ footer {
     margin-top: 60px;
     font-size: 0.85rem;
     color: #888;
+    padding-bottom: 40px;
 }
 
 /* ================= NAVBAR & TOGGLE STYLING ================= */
