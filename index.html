@@ -328,7 +328,7 @@
             
             <div class="contact-details">
                 <p><i class="fas fa-envelope"></i> <a href="mailto:mfarghazy@email.com">mfarghazy@email.com</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> Bogor Regency, West Java</p>
+                <p><i class="fas fa-map-marker-alt"></i> Bogor, West Java, Indonesia</p>
             </div>
         </div>
         
@@ -353,7 +353,6 @@
 
 <!-- ================= ACTIVE NAV ================= -->
 <script>
-    // Mengambil semua elemen section dan header (untuk #home)
     const sections = document.querySelectorAll("section, header");
     const navLinks = document.querySelectorAll(".nav-links a");
 
@@ -364,12 +363,18 @@
             const sectionTop = section.offsetTop;
             // Angka 150 adalah jarak toleransi dari atas layar sebelum navigasi berganti
             if (window.scrollY >= sectionTop - 150) {
-                // Pastikan section memiliki ID sebelum mengambil nilainya
                 if (section.getAttribute("id")) {
                     current = section.getAttribute("id");
                 }
             }
         });
+
+        // --- TAMBAHAN KODE BARU ---
+        // Deteksi jika scroll sudah mencapai titik paling bawah halaman (dengan toleransi 10px)
+        if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight - 10) {
+            current = "contact"; // Paksa menu aktif ke contact
+        }
+        // --------------------------
 
         navLinks.forEach((link) => {
             link.classList.remove("active");
