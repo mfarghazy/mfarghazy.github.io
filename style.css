@@ -6,6 +6,12 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Mencegah section tertutup navbar saat di-scroll otomatis */
+}
+
 body {
     background-color: #f8f9fa;
     color: #333;
@@ -514,115 +520,36 @@ footer {
     color: #ffffff;
 }
 
-/* Container Switch */
-.theme-switch {
-    display: inline-block;
-    height: 28px;
-    position: relative;
-    width: 60px;
-}
-
-.theme-switch input {
-    display: none;
-}
-
-/* Track Slider */
-.slider {
-    background-color: #4a5568;
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
+/* ================= THEME TOGGLE BUTTON ================= */
+.theme-toggle-btn {
+    background-color: #f8efda; /* Warna krem muda / light ala gambar 4 */
+    border: none;
+    border-radius: 8px; /* Sudut agak melengkung */
+    width: 38px;
+    height: 38px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding-right: 6px;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-left: 10px;
 }
 
-.slider i {
-    color: #3182ce;
-    font-size: 0.85rem;
+.theme-toggle-btn i {
+    color: #111;
+    font-size: 1.1rem;
 }
 
-/* Bulatan Tombol Geser */
-.slider:before {
-    background-color: #fff;
-    bottom: 3px;
-    content: "";
-    height: 22px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 22px;
-    z-index: 2;
+.theme-toggle-btn:hover {
+    transform: translateY(-2px);
+    background-color: #e5ddc9;
 }
 
-/* Mengubah warna track saat di-check */
-input:checked + .slider {
-    background-color: #3182ce;
-}
-
-/* Menggeser bulatan ke kanan saat di-check */
-input:checked + .slider:before {
-    transform: translateX(30px);
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-
-/* ================= STYLING HANYA UNTUK DARK MODE ================= */
-/* Ketika class .dark-mode aktif di tag <body>, warna elemen di bawah ini akan berubah */
-body.dark-mode {
-    background-color: #0f1115;
-    color: #e2e8f0;
-}
-
-body.dark-mode .profile-container h1,
-body.dark-mode .project-info h3,
-body.dark-mode .company-info h3,
-body.dark-mode .role-header h4,
-body.dark-mode .education-card h4,
-body.dark-mode .portfolio-section h2 {
-    color: #ffffff;
-}
-
-body.dark-mode .bio,
-body.dark-mode .project-info p,
-body.dark-mode .portfolio-section p {
-    color: #a0aec0;
-}
-
-body.dark-mode .project-card,
-body.dark-mode .company-card {
-    background-color: #1a1d24;
-    border-color: #2d3748;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-body.dark-mode .tags span {
-    background: #2d3748;
-    color: #e2e8f0;
-}
-
-body.dark-mode .social-links a,
-body.dark-mode .btn-slide {
-    color: #e2e8f0;
-}
-
-body.dark-mode .social-links a:hover,
-body.dark-mode .btn-slide:hover {
-    color: #3182ce;
-}
-
-body.dark-mode .role-item:not(:last-child)::before {
+/* Mengubah warna tombol di Dark Mode */
+body.dark-mode .theme-toggle-btn {
     background-color: #2d3748;
+}
+
+body.dark-mode .theme-toggle-btn i {
+    color: #fbd38d; /* Warna kuning matahari */
 }
