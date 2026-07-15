@@ -644,3 +644,86 @@ body.dark-mode .role-badge-dot {
     border-color: #1e1e1e; /* Menyesuaikan border dot dengan background card gelap */
 }
 
+/* ================= CONTACT SECTION IMPROVEMENT ================= */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 30px;
+}
+
+.contact-details p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.contact-details p i {
+    color: #007bff;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
+
+.contact-details a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.contact-details a:hover {
+    color: #007bff;
+}
+
+/* Desain Tombol Sosial Media */
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-social i {
+    font-size: 1.2rem;
+}
+
+.btn-social:hover {
+    border-color: #007bff;
+    color: #007bff;
+    background-color: #f8f9fa;
+    transform: translateY(-3px);
+}
+
+/* Penyesuaian Dark Mode untuk Contact Section */
+body.dark-mode .contact-details p i {
+    color: #66b2ff;
+}
+
+body.dark-mode .btn-social {
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .contact-info p {
+    color: #aaaaaa !important;
+}
+
+body.dark-mode .btn-social:hover {
+    border-color: #66b2ff;
+    color: #66b2ff;
+    background-color: #2a2a2a;
+}
