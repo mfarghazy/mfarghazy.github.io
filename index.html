@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
-
-     <!-- ================= TOGGLE SWITCH ================= -->
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Farhan Ghazy - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
 
     <nav class="navbar">
         <div class="nav-container">
@@ -14,62 +19,76 @@
                 <a href="#experience">Work Experience</a>
                 <a href="#education">Education</a>
                 
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" />
-                    <div class="slider round">
-                        <i class="fas fa-moon"></i>
-                    </div>
-                </label>
+                <button id="theme-toggle" class="theme-toggle-btn" title="Switch to dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-        <script>
-        const toggleSwitch = document.querySelector('#checkbox');
-        const currentTheme = localStorage.getItem('theme');
-
-        // Memeriksa apakah user sebelumnya sudah memilih dark mode
-        if (currentTheme) {
-            document.body.classList.add(currentTheme);
-
-            if (currentTheme === 'dark-mode') {
-                toggleSwitch.checked = true;
-            }
-        }
-
-        // Fungsi untuk mengubah tema saat toggle diklik
-        function switchTheme(e) {
-            if (e.target.checked) {
-                document.body.classList.add('dark-mode');
-                localStorage.setItem('theme', 'dark-mode');
-            } else {
-                document.body.classList.remove('dark-mode');
-                localStorage.setItem('theme', 'light-mode');
-            }    
-        }
-
-        toggleSwitch.addEventListener('change', switchTheme, false);
-    </script>
-</body>
-    
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Farhan Ghazy - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-
-    <header class="profile-container">
+    <header id="home" class="profile-container">
         <img src="profile.jpeg" alt="Foto Profil" class="profile-img">
         <h1>Muhammad Farhan Ghazy</h1>
         <p class="bio">Leveraging architectural and operations experience to approach data analytics with high precision, translating complex data into actionable insights.</p>
         
         <div class="social-links">
             <a href="https://www.linkedin.com/in/muhammad-farhan-ghazy/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="mfarghazy@email.com"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:mfarghazy@email.com"><i class="fas fa-envelope"></i></a>
         </div>
+    </header>
+
+    <section id="about" class="portfolio-section">
+        <h2 class="center-title" style="border-bottom: none; padding-bottom: 0;">About Me</h2>
+        <p style="text-align: center; color: #666; font-size: 0.95rem; margin-top: -10px; margin-bottom: 30px; border-bottom: 2px solid #ddd; padding-bottom: 20px;">
+            A brief introduction about my background and aspirations.
+        </p>
+        
+        <div class="company-card" style="margin-top: 0;">
+            <p style="margin-bottom: 15px;">Hello! I am Muhammad Farhan Ghazy, a data enthusiast with a unique background in architecture and operations. I leverage my experience in structured thinking and project management to approach data analytics with high precision.</p>
+            <p>Through my journey from architectural design to data analytics, I have developed a strong foundation in problem-solving, attention to detail, and a deep understanding of operational efficiency. My goal is to translate complex data into clear, actionable insights that drive business decisions.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="portfolio-section" style="margin-top: 50px;">
+        </section>
+    
+    <section id="experience" class="portfolio-section" style="margin-top: 50px;">
+        </section>
+
+    <section id="education" class="portfolio-section" style="margin-top: 50px;">
+        </section>
+
+    <script>
+        const toggleBtn = document.querySelector('#theme-toggle');
+        const icon = toggleBtn.querySelector('i');
+        const currentTheme = localStorage.getItem('theme');
+
+        // Cek tema yang tersimpan
+        if (currentTheme) {
+            document.body.classList.add(currentTheme);
+            if (currentTheme === 'dark-mode') {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                toggleBtn.title = "Switch to light mode";
+            }
+        }
+
+        // Fungsi saat tombol di-klik
+        toggleBtn.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark-mode');
+                icon.classList.replace('fa-moon', 'fa-sun');
+                toggleBtn.title = "Switch to light mode";
+            } else {
+                localStorage.setItem('theme', 'light-mode');
+                icon.classList.replace('fa-sun', 'fa-moon');
+                toggleBtn.title = "Switch to dark mode";
+            }    
+        });
+    </script>
+</body>
+</html>
 
     <!-- ================= PROJECTS SECTION ================= -->
     <section class="portfolio-section" style="margin-top: 50px;">
