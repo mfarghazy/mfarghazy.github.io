@@ -139,16 +139,17 @@ body {
 }
 
 /* Tombol Link */
+/* --- Tampilan default tombol View Detail (Light Mode) --- */
 .btn-link {
-    display: inline-block;
+    color: #495057; /* Warna abu-abu yang sama dengan Open Deck */
     text-decoration: none;
-    color: #007bff;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-weight: 500;
+    transition: color 0.3s ease; /* Memberikan efek transisi halus */
 }
 
+/* --- Tampilan View Detail saat di-hover (Light Mode) --- */
 .btn-link:hover {
-    text-decoration: underline;
+    color: #007bff; /* Berubah menjadi biru hanya saat kursor diarahkan */
 }
 
 /* Tambahan untuk Subtitle Section */
@@ -653,15 +654,16 @@ body.dark-mode .portfolio-section > p {
     color: #aaaaaa !important; 
 }
 
-/* --- 2. Memperbaiki teks 'Open Deck' agar terlihat di Dark Mode --- */
-body.dark-mode .btn-slide {
-    color: #aaaaaa;
+/* --- Memperbaiki teks 'Open Deck' dan 'View Detail' agar terlihat di Dark Mode --- */
+body.dark-mode .btn-slide,
+body.dark-mode .btn-link {
+    color: #aaaaaa; /* Warna dasar abu-abu terang saat tidak di-hover */
 }
 
-/* --- Mengubah warna hover kedua tombol menyesuaikan biru navigasi --- */
+/* --- Mengubah warna hover tombol menyesuaikan biru navigasi --- */
 body.dark-mode .btn-slide:hover,
 body.dark-mode .btn-link:hover {
-    color: #66b2ff;
+    color: #66b2ff; /* Berubah menjadi biru terang hanya saat kursor diarahkan */
 }
 
 /* --- 3. Mengubah warna hover Technical Skills menyesuaikan biru navigasi --- */
