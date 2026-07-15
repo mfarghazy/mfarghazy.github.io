@@ -569,7 +569,7 @@ body.dark-mode .nav-links a:hover {
 
 /* Mengubah warna tombol di Dark Mode */
 body.dark-mode .theme-toggle-btn {
-    background-color: #111111;
+    background-color: transparent;
 }
 
 body.dark-mode .theme-toggle-btn i {
