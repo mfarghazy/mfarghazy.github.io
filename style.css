@@ -539,7 +539,7 @@ body.dark-mode .nav-links a:hover {
 
 /* ================= THEME TOGGLE BUTTON ================= */
 .theme-toggle-btn {
-    background-color: #f8efda; /* Warna krem muda / light ala gambar 4 */
+    background-color: #ffffff; /* Warna krem muda / light ala gambar 4 */
     border: none;
     border-radius: 8px; /* Sudut agak melengkung */
     width: 38px;
@@ -553,8 +553,9 @@ body.dark-mode .nav-links a:hover {
 }
 
 .theme-toggle-btn i {
-    color: #111;
+    color: #111111; /* Warna gelap/hitam untuk ikon bulan saat Light Mode */
     font-size: 1.1rem;
+    transition: color 0.3s;
 }
 
 .theme-toggle-btn:hover {
