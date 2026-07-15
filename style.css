@@ -539,7 +539,7 @@ body.dark-mode .nav-links a:hover {
 
 /* ================= THEME TOGGLE BUTTON ================= */
 .theme-toggle-btn {
-    background-color: #ffffff; /* Warna krem muda / light ala gambar 4 */
+    background-color: #f8f9fa;
     border: none;
     border-radius: 8px; /* Sudut agak melengkung */
     width: 38px;
@@ -553,7 +553,7 @@ body.dark-mode .nav-links a:hover {
 }
 
 .theme-toggle-btn i {
-    color: #111111; /* Warna gelap/hitam untuk ikon bulan saat Light Mode */
+    color: #121212; /* Warna gelap/hitam untuk ikon bulan saat Light Mode */
     font-size: 1.1rem;
     transition: color 0.3s;
 }
@@ -565,11 +565,11 @@ body.dark-mode .nav-links a:hover {
 
 /* Mengubah warna tombol di Dark Mode */
 body.dark-mode .theme-toggle-btn {
-    background-color: #2d3748;
+    background-color: #121212;
 }
 
 body.dark-mode .theme-toggle-btn i {
-    color: #fbd38d; /* Warna kuning matahari */
+    color: #f8f9fa; /* Warna kuning matahari */
 }
 
 /* ================= THEME DARK MODE ================= */
