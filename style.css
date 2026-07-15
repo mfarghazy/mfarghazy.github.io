@@ -524,6 +524,17 @@ footer {
     color: #007bff; /* Teks menjadi biru saat di-hover */
 }
 
+/* ================= ACTIVE NAV LINK ================= */
+.nav-links a.active {
+    color: #007bff; /* Warna biru saat aktif */
+    font-weight: 700; /* Dibuat lebih tebal agar lebih menonjol */
+}
+
+/* Penyesuaian Active Link saat Dark Mode */
+body.dark-mode .nav-links a.active {
+    color: #66b2ff; /* Warna biru terang untuk mode gelap */
+}
+
 /* Penyesuaian navbar saat Dark Mode aktif */
 body.dark-mode .navbar {
     background-color: #1e1e1e;
