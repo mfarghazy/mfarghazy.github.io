@@ -18,6 +18,57 @@
             <a href="https://www.linkedin.com/in/muhammad-farhan-ghazy/" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="mfarghazy@email.com"><i class="fas fa-envelope"></i></a>
         </div>
+ <!-- ================= TOGGLE SWITCH ================= -->
+    <body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <span class="logo">Hi, There!</span>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#experience">Work Experience</a>
+                <a href="#projects">Projects</a>
+                
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                </label>
+            </div>
+        </div>
+    </nav>
+
+        <script>
+        const toggleSwitch = document.querySelector('#checkbox');
+        const currentTheme = localStorage.getItem('theme');
+
+        // Memeriksa apakah user sebelumnya sudah memilih dark mode
+        if (currentTheme) {
+            document.body.classList.add(currentTheme);
+
+            if (currentTheme === 'dark-mode') {
+                toggleSwitch.checked = true;
+            }
+        }
+
+        // Fungsi untuk mengubah tema saat toggle diklik
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light-mode');
+            }    
+        }
+
+        toggleSwitch.addEventListener('change', switchTheme, false);
+    </script>
+</body>
+        
     </header>
 
     <!-- ================= PROJECTS SECTION ================= -->
