@@ -28,8 +28,8 @@ body {
 }
 
 .profile-img {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
@@ -560,7 +560,7 @@ body.dark-mode .nav-links a:hover {
 
 .theme-toggle-btn:hover {
     transform: translateY(-2px);
-    background-color: #e5ddc9;
+    background-color: #f8f9fa;
 }
 
 /* Mengubah warna tombol di Dark Mode */
