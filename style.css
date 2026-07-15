@@ -648,6 +648,33 @@ body.dark-mode .role-badge-dot {
     border-color: #1e1e1e; /* Menyesuaikan border dot dengan background card gelap */
 }
 
+/* --- 1. Memperbaiki deskripsi section agar terlihat di Dark Mode --- */
+body.dark-mode .portfolio-section > p {
+    color: #aaaaaa !important; 
+}
+
+/* --- 2. Memperbaiki teks 'Open Deck' agar terlihat di Dark Mode --- */
+body.dark-mode .btn-slide {
+    color: #aaaaaa;
+}
+
+/* --- Mengubah warna hover kedua tombol menyesuaikan biru navigasi --- */
+body.dark-mode .btn-slide:hover,
+body.dark-mode .btn-link:hover {
+    color: #66b2ff;
+}
+
+/* --- 3. Mengubah warna hover Technical Skills menyesuaikan biru navigasi --- */
+body.dark-mode .tech-skill-item:hover i {
+    color: #66b2ff;
+}
+
+/* --- Mengubah warna hover Soft Skills menyesuaikan biru navigasi --- */
+body.dark-mode .soft-skill-pill:hover {
+    background-color: #66b2ff;
+    color: #111; /* (Opsional) Mengubah warna teks menjadi gelap agar kontras dengan background biru */
+}
+
 /* ================= CONTACT SECTION IMPROVEMENT ================= */
 .contact-grid {
     display: grid;
