@@ -376,10 +376,11 @@ body {
     margin-right: 6px;
 }
 
-/* Grid layout untuk Certifications (2 Kolom) */
+/* Grid layout untuk Certifications */
 .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* MENGUBAH DARI 1 COLUMN MENJADI GRID RESPONSIVE KANAN-KIRI */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin-top: 25px;
 }
@@ -391,6 +392,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 0;      /* Tambahkan ini untuk mereset margin bawaan .company-card */
+    margin-bottom: 0;   /* Tambahkan ini untuk mereset margin bawaan .company-card */
 }
 
 .cert-logo {
