@@ -162,6 +162,9 @@ body {
 /* --- Tags & Badges --- */
 .tags {
     margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .tags span, .date-badge {
@@ -175,8 +178,7 @@ body {
 }
 
 .tags span {
-    margin-right: 5px;
-    margin-bottom: 5px;
+    margin: 0;
 }
 
 .date-badge {
@@ -671,5 +673,26 @@ body.dark-mode .theme-toggle-btn:hover i {
 @media (max-width: 768px) {
     .education-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* --- KODE BARU UNTUK NAVIGASI HP --- */
+    .nav-container {
+        flex-direction: column; 
+        gap: 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+        overflow-x: auto; 
+        padding-bottom: 10px;
+        justify-content: flex-start;
+
+        /* Menyembunyikan scrollbar agar tampilan tetap rapi */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none; 
     }
 }
