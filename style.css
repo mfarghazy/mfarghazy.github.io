@@ -408,10 +408,31 @@ body.dark-mode .education-card h4 {
     margin-bottom: 8px; /* Jarak antara teks piala dan teks IPK */
 }
 
+/* ================= PERBAIKAN DARK MODE EDUCATION ================= */
 /* Dark mode untuk highlight box */
 body.dark-mode .edu-highlight {
     background-color: rgba(102, 178, 255, 0.1);
     border-left-color: #66b2ff;
+}
+
+/* 1. Mencerahkan teks deskripsi program agar terbaca di Dark Mode */
+body.dark-mode .edu-desc {
+    color: #aaaaaa !important;
+}
+
+/* 2. Menyamakan warna biru teks penghargaan dengan biru navigasi */
+body.dark-mode .edu-highlight p:first-child {
+    color: #66b2ff !important;
+}
+
+/* 3. Menyamakan warna ikon piala dengan biru navigasi */
+body.dark-mode .edu-highlight i.fa-trophy {
+    color: #66b2ff !important;
+}
+
+/* 4. Mencerahkan teks IPK / GPA di Dark Mode */
+body.dark-mode .edu-highlight p:last-child {
+    color: #ffffff !important;
 }
 
 /* ================= CERTIFICATION ================= */
