@@ -674,20 +674,26 @@ body.dark-mode .theme-toggle-btn:hover i {
     .education-grid {
         grid-template-columns: 1fr;
     }
-
-    /* --- KODE BARU UNTUK NAVIGASI HP --- */
+    
+    /* --- Tambahan: Kurangi tebal navbar keseluruhan di HP --- */
+    .navbar {
+        padding: 10px 15px; 
+    }
+    
     .nav-container {
         flex-direction: column; 
-        gap: 15px;
+        gap: 5px; /* Diperkecil dari 15px agar jarak logo ke menu lebih rapat */
     }
 
     .nav-links {
         width: 100%;
         overflow-x: auto; 
-        padding-bottom: 10px;
+        padding-bottom: 5px; /* Diperkecil agar tidak terlalu berjarak ke bawah */
         justify-content: flex-start;
-
-        /* Menyembunyikan scrollbar agar tampilan tetap rapi */
+        
+        /* Tambahan: Kurangi jarak antar teks menu (Home, About, dll) */
+        gap: 15px; 
+        
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
