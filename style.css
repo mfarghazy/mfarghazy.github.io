@@ -323,7 +323,7 @@ body {
 /* ================= EDUCATION GRID LAYOUT ================= */
 .education-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Membagi menjadi 2 kolom */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Membagi menjadi 3 kolom */
     gap: 20px; /* Jarak antar kartu */
 }
 
