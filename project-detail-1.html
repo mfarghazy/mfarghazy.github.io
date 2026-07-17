@@ -6,47 +6,51 @@
     <title>Project Detail - IndiRevo E-Commerce Analysis</title>
     <!-- Hubungkan ke Font Awesome untuk ikon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
     <style>
-        /* Menggunakan font dan warna yang sama dengan style.css Anda */
+        /* Menggunakan font dan variabel warna dari style.css */
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f8f9fa; color: #333; padding: 30px; line-height: 1.6; }
+        
+        /* Memanggil variabel warna background dan teks utama */
+        body { background-color: var(--bg-body); color: var(--text-primary); padding: 30px; line-height: 1.6; transition: background-color 0.3s, color 0.3s; }
         
         /* Navigasi Atas */
         .top-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto 40px auto; }
-        .back-link { color: #007bff; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .back-link { color: var(--accent-color); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
         .back-link:hover { text-decoration: underline; }
         
-        .btn-open-slides { background-color: #007bff; color: #fff; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,123,255,0.3); }
-        .btn-open-slides:hover { background-color: #0056b3; transform: translateY(-2px); }
+        .btn-open-slides { background-color: var(--accent-color); color: #fff; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,123,255,0.3); }
+        .btn-open-slides:hover { opacity: 0.9; transform: translateY(-2px); }
 
         /* Header Judul */
         .detail-header { text-align: center; max-width: 1000px; margin: 0 auto 40px auto; }
-        .detail-header h1 { font-size: 1.8rem; line-height: 1.4; color: #111; }
+        .detail-header h1 { font-size: 1.8rem; line-height: 1.4; color: var(--text-heading); }
 
         /* Layout Grid */
         .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1200px; margin: 0 auto; }
 
-        /* Kolom Kiri: Gambar dan Info Proyek (Desain Kartu Putih) */
-        .left-column img { width: 100%; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        /* Kolom Kiri: Gambar dan Info Proyek */
+        .left-column img { width: 100%; border-radius: 8px; margin-bottom: 20px; box-shadow: var(--shadow-card); }
         
-        .project-meta-card { background-color: #ffffff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .project-meta-card h3 { margin-bottom: 15px; font-size: 1.2rem; color: #111; }
-        .meta-item { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: #555; font-size: 0.95rem; }
-        .meta-item i { color: #007bff; width: 20px; text-align: center; }
-        .disclaimer { font-size: 0.8rem; color: #888; font-style: italic; margin-top: 20px; line-height: 1.5; }
+        .project-meta-card { background-color: var(--bg-card); padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: var(--shadow-card); }
+        .project-meta-card h3 { margin-bottom: 15px; font-size: 1.2rem; color: var(--text-heading); }
+        .meta-item { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: var(--text-muted); font-size: 0.95rem; }
+        .meta-item i { color: var(--accent-color); width: 20px; text-align: center; }
+        .disclaimer { font-size: 0.8rem; color: var(--text-muted); font-style: italic; margin-top: 20px; line-height: 1.5; }
 
-        /* Kolom Kanan: Deskripsi Proyek (Desain Kartu Putih) */
-        .right-column { background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden; }
+        /* Kolom Kanan: Deskripsi Proyek */
+        .right-column { background-color: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); box-shadow: var(--shadow-card); overflow: hidden; }
         
-        .overview-header { background-color: #f8f9fa; padding: 20px 25px; border-bottom: 1px solid #eee; font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; color: #111; }
-        .overview-header i { color: #007bff; }
+        .overview-header { background-color: var(--bg-body); padding: 20px 25px; border-bottom: 1px solid var(--border-divider); font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-heading); }
+        .overview-header i { color: var(--accent-color); }
         
         .overview-content { padding: 25px; }
         
-        .content-section { background-color: #fcfcfc; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #eee; }
+        .content-section { background-color: var(--bg-body); padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--border-color); }
         .content-section:last-child { margin-bottom: 0; }
-        .content-section h4 { color: #111; margin-bottom: 10px; font-size: 1.1rem; }
-        .content-section p, .content-section ul { color: #555; font-size: 0.95rem; line-height: 1.6; }
+        .content-section h4 { color: var(--text-heading); margin-bottom: 10px; font-size: 1.1rem; }
+        .content-section p, .content-section ul { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
         .content-section ul { padding-left: 20px; margin-top: 10px; }
         .content-section li { margin-bottom: 8px; }
 
@@ -118,6 +122,17 @@
             </div>
         </div>
     </div>
+
+<!-- TAMBAHKAN SCRIPT INI -->
+    <script>
+        // Cek tema yang tersimpan di memori browser
+        const currentTheme = localStorage.getItem('theme');
+
+        // Terapkan class dark-mode jika tema yang tersimpan adalah dark-mode
+        if (currentTheme) {
+            document.body.classList.add(currentTheme);
+        }
+    </script>
 
 </body>
 </html>
