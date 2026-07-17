@@ -671,10 +671,26 @@ body.dark-mode .theme-toggle-btn:hover i {
 
 /* ================= MEDIA QUERIES ================= */
 @media (max-width: 768px) {
-    .education-grid {
-        grid-template-columns: 1fr;
+    /* ... kode sebelumnya ... */
+
+    /* Mengurangi padding navbar agar lebih tipis */
+    .navbar {
+        padding: 5px 10px; 
     }
-    
+
+    /* Mengurangi ukuran font agar teks tidak menumpuk dan bar lebih ramping */
+    .nav-links a {
+        font-size: 0.85rem; 
+    }
+
+    /* Menyembunyikan tombol theme toggle di HP jika dirasa memakan tempat, 
+       atau mengecilkannya agar bar lebih ringkas */
+    .theme-toggle-btn {
+        width: 30px;
+        height: 30px;
+    }
+}
+
     /* --- Tambahan: Kurangi tebal navbar keseluruhan di HP --- */
     .navbar {
         padding: 10px 15px; 
