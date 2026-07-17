@@ -207,8 +207,16 @@ body {
     gap: 30px;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
+.project-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
+    /* Tambahkan 3 baris di bawah ini */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-thumb {
@@ -219,6 +227,10 @@ body {
 
 .project-info {
     padding: 20px;
+    /* Tambahkan 3 baris di bawah ini */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .project-info h3 {
@@ -237,7 +249,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin-top: auto; /* Ubah baris ini dari 20px menjadi auto */
     border-top: 1px solid var(--border-divider);
     padding-top: 15px;
 }
