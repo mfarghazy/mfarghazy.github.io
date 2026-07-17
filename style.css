@@ -333,6 +333,14 @@ body {
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
+    height: 100%; /* Memastikan tinggi kartu mengisi seluruh grid */
+}
+
+/* Memaksa tags selalu berada di bagian paling bawah kartu */
+.education-card .tags {
+    margin-top: auto !important; 
+    padding-top: 20px; 
+    margin-bottom: 0;
 }
 
 /* Menyejajarkan Logo dan Nama Universitas (Horizontal) */
@@ -357,8 +365,15 @@ body {
 }
 
 .education-card h4 {
-    font-size: 1rem;
-    margin-bottom: 12px;
+    font-size: 1.05rem;
+    font-weight: 500; /* Menurunkan ketebalan teks agar beda dengan h3 */
+    color: #444;      /* Warna sedikit lebih redup */
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+body.dark-mode .education-card h4 {
+    color: #cccccc; /* Penyesuaian untuk dark mode */
 }
 
 /* Penyesuaian Badge Tanggal (Rata Kiri, bukan di flex sejajar judul) */
@@ -376,7 +391,30 @@ body {
     margin-right: 6px;
 }
 
-/* Grid layout untuk Certifications */
+/* Kotak Highlight untuk Prestasi & IPK di Education */
+.edu-highlight {
+    background-color: rgba(0, 123, 255, 0.05); /* Biru transparan */
+    border-left: 3px solid #007bff; /* Garis aksen biru */
+    padding: 12px 15px;
+    margin: 15px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.edu-highlight .edu-gpa {
+    margin-top: 0 !important; /* Menghapus margin bawaan agar rapi di dalam kotak */
+}
+
+.edu-highlight .edu-gpa:not(:last-child) {
+    margin-bottom: 8px; /* Jarak antara teks piala dan teks IPK */
+}
+
+/* Dark mode untuk highlight box */
+body.dark-mode .edu-highlight {
+    background-color: rgba(102, 178, 255, 0.1);
+    border-left-color: #66b2ff;
+}
+
+/* ================= CERTIFICATION ================= */
 .certifications-grid {
     display: grid;
     /* MENGUBAH DARI 1 COLUMN MENJADI GRID RESPONSIVE KANAN-KIRI */
