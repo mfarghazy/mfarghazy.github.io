@@ -461,7 +461,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90px;
+    width: 120px;
 }
 
 .tech-skill-item i {
