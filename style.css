@@ -1,4 +1,62 @@
-/* General Setting */
+/* ================= CSS VARIABLES (THEME COLORS) ================= */
+:root {
+    /* --- Light Mode Colors (Default) --- */
+    --bg-body: #f8f9fa;
+    --bg-card: #ffffff;
+    --bg-nav: #ffffff;
+    
+    --text-primary: #333333;
+    --text-heading: #111111;
+    --text-subheading: #444444; /* Untuk H4 dan teks yang tidak terlalu gelap */
+    --text-muted: #666666; /* Untuk deskripsi, bio, info */
+    
+    --accent-color: #007bff; /* Biru utama */
+    
+    --border-color: #e9ecef;
+    --border-divider: #eeeeee;
+    
+    --bg-badge: #e9ecef; /* Background untuk tags dan date badge */
+    --text-badge: #495057; /* Teks untuk tags dan date badge */
+    
+    --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05);
+    
+    --timeline-line: #e9ecef;
+    --timeline-dot-border: #ffffff;
+    
+    --highlight-bg: rgba(0, 123, 255, 0.05);
+    --btn-social-hover: #f8f9fa;
+}
+
+body.dark-mode {
+    /* --- Dark Mode Colors --- */
+    --bg-body: #121212;
+    --bg-card: #1e1e1e;
+    --bg-nav: #1e1e1e;
+    
+    --text-primary: #e0e0e0;
+    --text-heading: #ffffff;
+    --text-subheading: #cccccc;
+    --text-muted: #aaaaaa;
+    
+    --accent-color: #66b2ff; /* Biru terang untuk dark mode */
+    
+    --border-color: #333333;
+    --border-divider: #333333;
+    
+    --bg-badge: #333333;
+    --text-badge: #e0e0e0;
+    
+    --shadow-card: 0 4px 15px rgba(255, 255, 255, 0.05);
+    
+    --timeline-line: #444444;
+    --timeline-dot-border: #1e1e1e;
+    
+    --highlight-bg: rgba(102, 178, 255, 0.1);
+    --btn-social-hover: #2a2a2a;
+}
+
+
+/* ================= GENERAL SETTING ================= */
 * {
     margin: 0;
     padding: 0;
@@ -6,20 +64,20 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Smooth Scroll */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Mencegah section tertutup navbar saat di-scroll otomatis */
+    scroll-padding-top: 80px; 
 }
 
 body {
-    background-color: #f8f9fa;
-    color: #333;
+    background-color: var(--bg-body);
+    color: var(--text-primary);
     line-height: 1.6;
     padding: 0;
+    transition: background-color 0.3s, color 0.3s; /* Transisi halus saat ganti tema */
 }
 
-/* Profile Section / Header */
+/* ================= PROFILE SECTION ================= */
 .profile-container {
     text-align: center;
     max-width: 600px;
@@ -33,40 +91,34 @@ body {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
-    border: 3px solid #fff;
+    border: 3px solid var(--bg-card);
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .profile-container h1 {
     font-size: 2rem;
     margin-bottom: 5px;
-    color: #111;
-}
-
-.tagline {
-    color: #666;
-    font-weight: 500;
-    margin-bottom: 15px;
+    color: var(--text-heading);
 }
 
 .bio {
     font-size: 0.95rem;
-    color: #555;
+    color: var(--text-muted);
     margin-bottom: 20px;
 }
 
 .social-links a {
-    color: #333;
+    color: var(--text-primary);
     font-size: 1.5rem;
     margin: 0 10px;
     transition: color 0.3s;
 }
 
 .social-links a:hover {
-    color: #007bff;
+    color: var(--accent-color);
 }
 
-/* Bagian Grid Proyek */
+/* ================= GENERAL TYPOGRAPHY & COMPONENTS ================= */
 .portfolio-section {
     max-width: 900px;
     margin: 0 auto;
@@ -76,23 +128,83 @@ body {
 .portfolio-section h2 {
     font-size: 1.5rem;
     margin-bottom: 25px;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 10px;
+    color: var(--text-heading);
 }
 
+.portfolio-section h2.center-title {
+    text-align: center;
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+
+.portfolio-section > p, .section-subtitle {
+    color: var(--text-muted);
+}
+
+/* --- Base Cards --- */
+.company-card, .project-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+.company-card {
+    padding: 30px;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* --- Tags & Badges --- */
+.tags {
+    margin-bottom: 15px;
+}
+
+.tags span, .date-badge {
+    background-color: var(--bg-badge);
+    color: var(--text-badge);
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.tags span {
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.date-badge {
+    font-size: 0.8rem;
+    padding: 4px 12px;
+}
+
+/* --- Buttons & Links --- */
+.btn-link, .btn-slide {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-badge); 
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease; 
+}
+
+.btn-link:hover, .btn-slide:hover {
+    color: var(--accent-color);
+}
+
+/* ================= PROJECTS SECTION ================= */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-}
-
-/* Kartu Proyek */
-.project-card {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
 }
 
 .project-card:hover {
@@ -112,142 +224,60 @@ body {
 .project-info h3 {
     font-size: 1.2rem;
     margin-bottom: 10px;
-    color: #111;
+    color: var(--text-heading);
 }
 
 .project-info p {
     font-size: 0.9rem;
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 15px;
 }
 
-/* Badge / Label Tags */
-.tags {
-    margin-bottom: 15px;
-}
-
-.tags span {
-    display: inline-block;
-    background: #e9ecef;
-    color: #495057;
-    font-size: 0.75rem;
-    padding: 4px 10px;
-    border-radius: 20px;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    font-weight: 500;
-}
-
-/* Tombol Link */
-/* --- Tampilan default tombol View Detail (Light Mode) --- */
-.btn-link {
-    display: inline-flex;     /* Membuat teks dan ikon sejajar di tengah */
-    align-items: center;      /* Vertikal center untuk isi tombol */
-    gap: 6px;                 /* Memberi jarak antara teks dan ikon panah */
-    color: #495057; 
-    text-decoration: none;
-    font-size: 0.9rem;        /* Menyamakan font size dengan tombol Open Deck */
-    font-weight: 500;
-    transition: color 0.3s ease; 
-}
-
-/* --- Tampilan View Detail saat di-hover (Light Mode) --- */
-.btn-link:hover {
-    color: #007bff; /* Berubah menjadi biru hanya saat kursor diarahkan */
-}
-
-/* Tambahan untuk Subtitle Section */
-.section-subtitle {
-    color: #666;
-    font-size: 0.95rem;
-    margin-top: -20px;
-    margin-bottom: 25px;
-}
-
-/* Penataan Tombol di Kartu Proyek */
 .project-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--border-divider);
     padding-top: 15px;
 }
 
-.btn-slide {
-    display: inline-flex;     /* Diubah dari inline-block agar sejajar seperti btn-link */
-    align-items: center;      /* Vertikal center untuk isi tombol */
-    text-decoration: none;
-    color: #495057;
-    font-size: 0.9rem;        /* Font size sudah benar */
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.btn-slide:hover {
-    color: #007bff; /* Berubah biru saat di-hover */
-}
-
-.btn-slide i {
-    margin-right: 6px;
-}
-
-/* Card Perusahaan - Disamakan dengan .project-card */
-.company-card {
-    background-color: #ffffff; /* Menggunakan putih murni */
-    border: 1px solid #e9ecef;
-    border-radius: 8px; /* Mengikuti radius kartu proyek */
-    padding: 30px;
-    text-align: justify;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Shadow lembut milik proyek */
-    margin-top: 20px;
-    margin-bottom: 40px;
-}
-
-/* Bagian Atas / Identitas Perusahaan */
+/* ================= WORK EXPERIENCE ================= */
 .company-header {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-bottom: 25px;
-    border-bottom: 2px solid #eee; /* Mengikuti gaya border bawah header section */
+    border-bottom: 2px solid var(--border-divider);
     padding-bottom: 15px;
 }
 
 .company-info h3 {
     font-size: 1.3rem;
     margin: 0;
-    color: #111111; /* Judul gelap tebal */
+    color: var(--text-heading);
     font-weight: 600;
 }
 
-/* 1. Berikan garis background pada container utama */
 .roles-timeline {
     position: relative;
     padding-left: 25px;
 }
 
-/* Buat garis timeline menggunakan ::before pada container */
-.roles-timeline::before {
-    display: none; /* Nonaktifkan garis bawaan container */
+.role-item {
+    position: relative; 
+    margin-bottom: 35px;
 }
 
-/* Menghubungkan masing-masing item, berhenti di item terakhir */
 .role-item:not(:last-child)::before {
     content: '';
     position: absolute;
-    left: -25px;              /* Sejajar sempurna dengan koordinat left dot */
-    top: 6px;                 /* Mulai persis dari titik teratas dot */
-    width: 12px;              /* Ketebalan disamakan dengan lebar dot (12px) */
-    height: calc(100% + 35px);/* Panjang: tinggi item saat ini + margin-bottom 35px */
-    background-color: #e9ecef;
+    left: -25px;
+    top: 6px;
+    width: 12px;
+    height: calc(100% + 35px);
+    background-color: var(--timeline-line);
     z-index: 1;
-}
-
-/* 3. Sesuaikan posisi titik/dot biru agar pas di tengah garis */
-.role-item {
-    position: relative; /* Pastikan ini ada agar posisi dot relatif terhadap item */
-    margin-bottom: 35px;
 }
 
 .role-badge-dot {
@@ -256,26 +286,12 @@ body {
     top: 6px;
     width: 12px;
     height: 12px;
-    background-color: #007bff; 
-    /* border: 2px solid #ffffff; */ /* <-- Comment/Hapus baris ini */
+    background-color: var(--accent-color); 
+    border: 2px solid var(--timeline-dot-border);
     border-radius: 50%;
     z-index: 2;
 }
 
-/* Titik/Dot pada setiap role */
-.role-badge-dot {
-    position: absolute;
-    left: -25px;            /* Disesuaikan agar posisinya pas di tengah-tengah garis */
-    top: 6px;
-    width: 12px;
-    height: 12px;
-    background-color: #007bff; /* Biru aksen tombol utama */
-    border: 2px solid #ffffff; /* Memotong garis abu di belakangnya */
-    border-radius: 50%;
-    z-index: 2;
-}
-
-/* Detail Role Header */
 .role-header {
     display: flex;
     justify-content: space-between;
@@ -288,11 +304,10 @@ body {
 .role-header h4 {
     font-size: 1.1rem;
     margin: 0;
-    color: #111111;
+    color: var(--text-heading);
     font-weight: 600;
 }
 
-/* Menggeser bullet point pada Work Experience */
 .experience-bullets {
     padding-left: 20px;
     margin-top: 10px;
@@ -302,48 +317,27 @@ body {
     margin-bottom: 8px;
 }
 
-/* Badge Tanggal */
-.date-badge {
-    font-size: 0.8rem;
-    color: #495057 !important;       /* Ditambah !important untuk memaksa warna konsisten */
-    background-color: #e9ecef !important; /* Memaksa warna background abu-abu terang */
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-weight: 500;
-    display: inline-block;           /* Ditambahkan agar bentuk pill konsisten (tidak terpotong) */
-}
-
-/* --- Penyesuaian Judul Tengah (Tanpa Garis Bawah) --- */
-.portfolio-section h2.center-title {
-    text-align: center;
-    border-bottom: none;
-    margin-bottom: 10px;
-}
-
-/* ================= EDUCATION GRID LAYOUT ================= */
+/* ================= EDUCATION SECTION ================= */
 .education-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Membagi menjadi 3 kolom */
-    gap: 20px; /* Jarak antar kartu */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-/* Mengubah behavior card di dalam grid */
 .education-grid .company-card {
     margin-top: 0;
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
-    height: 100%; /* Memastikan tinggi kartu mengisi seluruh grid */
+    height: 100%; 
 }
 
-/* Memaksa tags selalu berada di bagian paling bawah kartu */
 .education-card .tags {
-    margin-top: auto !important; 
+    margin-top: auto; 
     padding-top: 20px; 
     margin-bottom: 0;
 }
 
-/* Menyejajarkan Logo dan Nama Universitas (Horizontal) */
 .edu-header {
     display: flex;
     align-items: center;
@@ -352,93 +346,59 @@ body {
 }
 
 .edu-header .edu-logo-small {
-    width: 45px; /* Mengatur logo menjadi agak bulat/kotak kecil */
+    width: 45px;
     height: 45px;
     object-fit: contain;
     margin-bottom: 0;
 }
 
 .edu-header h3 {
-    margin: 0 !important;
+    margin: 0;
     font-size: 1.2rem;
     line-height: 1.3;
+    color: var(--text-heading);
 }
 
 .education-card h4 {
     font-size: 1.05rem;
-    font-weight: 500; /* Menurunkan ketebalan teks agar beda dengan h3 */
-    color: #444;      /* Warna sedikit lebih redup */
+    font-weight: 500;
+    color: var(--text-subheading);
     line-height: 1.4;
     margin-bottom: 15px;
 }
 
-body.dark-mode .education-card h4 {
-    color: #cccccc; /* Penyesuaian untuk dark mode */
-}
-
-/* Penyesuaian Badge Tanggal (Rata Kiri, bukan di flex sejajar judul) */
 .education-card .date-badge {
-    align-self: flex-start; /* Memastikan badge tetap di kiri */
-    display: inline-block;
-    font-size: 0.8rem;
-    padding: 6px 14px;
-    background-color: #333; /* Warna gelap ala gambar referensi */
-    color: #fff; /* Teks putih ala gambar referensi */
-    border-radius: 20px; /* Mengurangi lekukan radius agar seperti referensi */
+    align-self: flex-start;
+    background-color: var(--bg-badge); 
+    color: var(--text-badge); 
 }
 
-.education-card .date-badge i {
-    margin-right: 6px;
-}
-
-/* Kotak Highlight untuk Prestasi & IPK di Education */
+/* --- Education Highlight (Prestasi & GPA) --- */
 .edu-highlight {
-    background-color: rgba(0, 123, 255, 0.05); /* Biru transparan */
-    border-left: 3px solid #007bff; /* Garis aksen biru */
+    background-color: var(--highlight-bg);
+    border-left: 3px solid var(--accent-color);
     padding: 12px 15px;
     margin: 15px 0;
     border-radius: 0 4px 4px 0;
 }
 
 .edu-highlight .edu-gpa {
-    margin-top: 0 !important; /* Menghapus margin bawaan agar rapi di dalam kotak */
+    margin-top: 0; 
 }
 
 .edu-highlight .edu-gpa:not(:last-child) {
-    margin-bottom: 8px; /* Jarak antara teks piala dan teks IPK */
+    margin-bottom: 8px; 
 }
 
-/* ================= PERBAIKAN DARK MODE EDUCATION ================= */
-/* Dark mode untuk highlight box */
-body.dark-mode .edu-highlight {
-    background-color: rgba(102, 178, 255, 0.1);
-    border-left-color: #66b2ff;
-}
-
-/* 1. Mencerahkan teks deskripsi program agar terbaca di Dark Mode */
-body.dark-mode .edu-desc {
-    color: #aaaaaa !important;
-}
-
-/* 2. Menyamakan warna biru teks penghargaan dengan biru navigasi */
-body.dark-mode .edu-highlight p:first-child {
-    color: #66b2ff !important;
-}
-
-/* 3. Menyamakan warna ikon piala dengan biru navigasi */
-body.dark-mode .edu-highlight i.fa-trophy {
-    color: #66b2ff !important;
-}
-
-/* 4. Mencerahkan teks IPK / GPA di Dark Mode */
-body.dark-mode .edu-highlight p:last-child {
-    color: #ffffff !important;
+/* *Penting*: Memaksa warna ikon piala dan teks prestasi agar selalu mengikuti accent-color */
+.edu-highlight p:has(.fa-trophy),
+.edu-highlight p i.fa-trophy {
+    color: var(--accent-color) !important;
 }
 
 /* ================= CERTIFICATION ================= */
 .certifications-grid {
     display: grid;
-    /* MENGUBAH DARI 1 COLUMN MENJADI GRID RESPONSIVE KANAN-KIRI */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin-top: 25px;
@@ -451,8 +411,8 @@ body.dark-mode .edu-highlight p:last-child {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 0;      /* Tambahkan ini untuk mereset margin bawaan .company-card */
-    margin-bottom: 0;   /* Tambahkan ini untuk mereset margin bawaan .company-card */
+    margin-top: 0;      
+    margin-bottom: 0;   
 }
 
 .cert-logo {
@@ -466,23 +426,16 @@ body.dark-mode .edu-highlight p:last-child {
 .cert-card h4 {
     font-size: 1rem;
     margin: 0 0 5px 0;
+    color: var(--text-heading);
 }
 
 .cert-card p {
     font-size: 0.85rem;
-    color: #666;
+    color: var(--text-muted);
     margin: 0 0 15px 0;
 }
 
-/* Responsive untuk layar Handphone/Tablet */
-@media (max-width: 768px) {
-    .education-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ================= ADD-ON ================= */
-/* Layout untuk Technical Skills */
+/* ================= SKILLS ================= */
 .tech-skills-container {
     display: flex;
     justify-content: center;
@@ -498,8 +451,8 @@ body.dark-mode .edu-highlight p:last-child {
 }
 
 .tech-skill-item i {
-    font-size: 3rem; /* Ukuran icon besar seperti di referensi */
-    color: #495057; /* Warna abu-abu gelap */
+    font-size: 3rem; 
+    color: var(--text-badge); 
     margin-bottom: 12px;
     transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -507,16 +460,14 @@ body.dark-mode .edu-highlight p:last-child {
 .tech-skill-item span {
     font-size: 0.9rem;
     font-weight: 500;
-    color: #333;
+    color: var(--text-primary);
 }
 
-/* Efek saat kursor diarahkan ke icon Technical Skill */
 .tech-skill-item:hover i {
     transform: translateY(-8px);
-    color: #007bff; /* Berubah menjadi biru */
+    color: var(--accent-color); 
 }
 
-/* Layout untuk Soft Skills */
 .soft-skills-container {
     display: flex;
     justify-content: center;
@@ -527,224 +478,23 @@ body.dark-mode .edu-highlight p:last-child {
 }
 
 .soft-skill-pill {
-    background-color: #333; /* Warna gelap untuk pill (kontras dengan background terang) */
-    color: #ffffff;
+    background-color: var(--bg-badge); 
+    color: var(--text-badge);
     padding: 10px 22px;
-    border-radius: 30px; /* Membuat ujungnya sangat melengkung */
+    border-radius: 30px; 
     font-size: 0.9rem;
     font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    box-shadow: var(--shadow-card);
 }
 
 .soft-skill-pill:hover {
-    background-color: #007bff; /* Berubah biru saat di-hover */
+    background-color: var(--accent-color); 
+    color: #ffffff; /* Selalu putih saat di-hover */
     transform: translateY(-3px);
 }
 
-footer {
-    text-align: center;
-    margin-top: 60px;
-    font-size: 0.85rem;
-    color: #888;
-    padding-bottom: 40px;
-}
-
-/* ================= NAVBAR & TOGGLE STYLING ================= */
-.navbar {
-    background-color: #ffffff; /* Mengubah warna navy menjadi putih */
-    padding: 15px 30px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Menambahkan bayangan halus agar terpisah dari body */
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.navbar .logo {
-    color: #111111; /* Mengubah teks logo menjadi gelap */
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.nav-links a {
-    color: #555555; /* Mengubah warna teks link menjadi abu-abu gelap */
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #007bff; /* Teks menjadi biru saat di-hover */
-}
-
-/* ================= ACTIVE NAV LINK ================= */
-.nav-links a.active {
-    color: #007bff; /* Warna biru saat aktif */
-    font-weight: 700; /* Dibuat lebih tebal agar lebih menonjol */
-}
-
-/* Penyesuaian Active Link saat Dark Mode */
-body.dark-mode .nav-links a.active {
-    color: #66b2ff; /* Warna biru terang untuk mode gelap */
-}
-
-/* Penyesuaian navbar saat Dark Mode aktif */
-body.dark-mode .navbar {
-    background-color: #1e1e1e;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-}
-body.dark-mode .navbar .logo,
-body.dark-mode .nav-links a {
-    color: #e0e0e0;
-}
-body.dark-mode .nav-links a:hover {
-    color: #66b2ff;
-}
-
-/* ================= THEME TOGGLE BUTTON ================= */
-.theme-toggle-btn:hover i {
-    color: #007bff;
-}
-
-.theme-toggle-btn {
-    background-color: #ffffff;
-    border: none;
-    border-radius: 8px; /* Sudut agak melengkung */
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-    margin-left: 10px;
-}
-
-.theme-toggle-btn i {
-    color: #121212; /* Warna gelap/hitam untuk ikon bulan saat Light Mode */
-    font-size: 1.1rem;
-    transition: color 0.3s;
-}
-
-.theme-toggle-btn:hover {
-    transform: translateY(-2px);
-    background-color: transparent;
-}
-
-/* Mengubah warna tombol di Dark Mode */
-body.dark-mode .theme-toggle-btn {
-    background-color: transparent;
-}
-
-body.dark-mode .theme-toggle-btn i {
-    color: #f8f9fa; /* Warna kuning matahari */
-}
-
-/* ================= THEME DARK MODE ================= */
-
-body.dark-mode .theme-toggle-btn:hover i {
-    color: #66b2ff;
-}
-
-body.dark-mode .theme-toggle-btn:hover {
-    background-color: transparent; /* Membuat background transparan saat di-hover di dark mode */
-}
-
-body.dark-mode .social-links a:hover {
-    color: #66b2ff;
-}
-
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-body.dark-mode .company-card, 
-body.dark-mode .project-card {
-    background-color: #1e1e1e;
-    border-color: #333;
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
-}
-
-body.dark-mode h1, 
-body.dark-mode h2, 
-body.dark-mode h3, 
-body.dark-mode h4,
-body.dark-mode .company-info h3,
-body.dark-mode .role-header h4 {
-    color: #ffffff;
-}
-
-body.dark-mode .bio, 
-body.dark-mode .project-info p, 
-body.dark-mode .cert-card p,
-body.dark-mode .section-subtitle {
-    color: #aaaaaa;
-}
-
-body.dark-mode .tags span,
-body.dark-mode .date-badge {
-    background-color: #333 !important;
-    color: #e0e0e0 !important;
-}
-
-body.dark-mode .social-links a,
-body.dark-mode .tech-skill-item span {
-    color: #e0e0e0;
-}
-
-body.dark-mode .role-item:not(:last-child)::before {
-    background-color: #444;
-}
-
-body.dark-mode .role-badge-dot {
-    border-color: #1e1e1e; /* Menyesuaikan border dot dengan background card gelap */
-}
-
-/* --- 1. Memperbaiki deskripsi section agar terlihat di Dark Mode --- */
-body.dark-mode .portfolio-section > p {
-    color: #aaaaaa !important; 
-}
-
-/* --- Memperbaiki teks 'Open Deck' dan 'View Detail' agar terlihat di Dark Mode --- */
-body.dark-mode .btn-slide,
-body.dark-mode .btn-link {
-    color: #aaaaaa; /* Warna dasar abu-abu terang saat tidak di-hover */
-}
-
-/* --- Mengubah warna hover tombol menyesuaikan biru navigasi --- */
-body.dark-mode .btn-slide:hover,
-body.dark-mode .btn-link:hover {
-    color: #66b2ff; /* Berubah menjadi biru terang hanya saat kursor diarahkan */
-}
-
-/* --- 3. Mengubah warna hover Technical Skills menyesuaikan biru navigasi --- */
-body.dark-mode .tech-skill-item:hover i {
-    color: #66b2ff;
-}
-
-/* --- Mengubah warna hover Soft Skills menyesuaikan biru navigasi --- */
-body.dark-mode .soft-skill-pill:hover {
-    background-color: #66b2ff;
-    color: #111; /* (Opsional) Mengubah warna teks menjadi gelap agar kontras dengan background biru */
-}
-
-/* ================= CONTACT SECTION IMPROVEMENT ================= */
+/* ================= CONTACT ================= */
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -757,10 +507,11 @@ body.dark-mode .soft-skill-pill:hover {
     align-items: center;
     margin-bottom: 12px;
     font-weight: 500;
+    color: var(--text-muted);
 }
 
 .contact-details p i {
-    color: #007bff;
+    color: var(--accent-color);
     font-size: 1.2rem;
     margin-right: 15px;
     width: 20px;
@@ -774,10 +525,9 @@ body.dark-mode .soft-skill-pill:hover {
 }
 
 .contact-details a:hover {
-    color: #007bff;
+    color: var(--accent-color);
 }
 
-/* Desain Tombol Sosial Media */
 .social-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -789,10 +539,10 @@ body.dark-mode .soft-skill-pill:hover {
     align-items: center;
     gap: 10px;
     padding: 10px 20px;
-    border: 2px solid #e9ecef;
+    border: 2px solid var(--border-divider);
     border-radius: 8px;
     text-decoration: none;
-    color: #333;
+    color: var(--text-primary);
     font-weight: 600;
     transition: all 0.3s ease;
 }
@@ -802,28 +552,112 @@ body.dark-mode .soft-skill-pill:hover {
 }
 
 .btn-social:hover {
-    border-color: #007bff;
-    color: #007bff;
-    background-color: #f8f9fa;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background-color: var(--btn-social-hover);
     transform: translateY(-3px);
 }
 
-/* Penyesuaian Dark Mode untuk Contact Section */
-body.dark-mode .contact-details p i {
-    color: #66b2ff;
+footer {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding-bottom: 40px;
 }
 
-body.dark-mode .btn-social {
-    border-color: #444;
-    color: #e0e0e0;
+/* ================= NAVBAR & TOGGLE ================= */
+.navbar {
+    background-color: var(--bg-nav); 
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
+    transition: background-color 0.3s;
 }
 
-body.dark-mode .contact-info p {
-    color: #aaaaaa !important;
+body.dark-mode .navbar {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
-body.dark-mode .btn-social:hover {
-    border-color: #66b2ff;
-    color: #66b2ff;
-    background-color: #2a2a2a;
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar .logo {
+    color: var(--text-heading); 
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: var(--text-muted); 
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color); 
+}
+
+.nav-links a.active {
+    color: var(--accent-color); 
+    font-weight: 700; 
+}
+
+/* --- Theme Toggle Button --- */
+.theme-toggle-btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 8px; 
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-left: 10px;
+}
+
+.theme-toggle-btn i {
+    color: var(--text-heading); 
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    transform: translateY(-2px);
+}
+
+.theme-toggle-btn:hover i {
+    color: var(--accent-color);
+}
+
+body.dark-mode .theme-toggle-btn i {
+    color: #f8f9fa; /* Warna kuning/terang spesifik untuk ikon matahari */
+}
+
+body.dark-mode .theme-toggle-btn:hover i {
+    color: var(--accent-color);
+}
+
+/* ================= MEDIA QUERIES ================= */
+@media (max-width: 768px) {
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
 }
