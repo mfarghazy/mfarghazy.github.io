@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail - RevoBank Customer Segmentation Analysis</title>
+    <!-- Hubungkan ke Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- TAMBAHKAN BARIS INI: Hubungkan ke style.css utama Anda -->
+    <link rel="stylesheet" href="style.css">
+   
+    <style>
+        /* Menggunakan font dan variabel warna dari style.css */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        /* Memanggil variabel warna background dan teks utama */
+        body { background-color: var(--bg-body); color: var(--text-primary); padding: 30px; line-height: 1.6; transition: background-color 0.3s, color 0.3s; }
+        
+        /* Navigasi Atas */
+        .top-nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto 40px auto; }
+        .back-link { color: var(--text-badge); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: color 0.3s ease; }
+        .back-link:hover { color: var(--accent-color); text-decoration: none; }
+        
+        .btn-open-slides { background-color: var(--accent-color); color: #fff; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s; box-shadow: 0 2px 5px rgba(0,123,255,0.3); }
+        .btn-open-slides:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        /* Header Judul */
+        .detail-header { text-align: center; max-width: 1000px; margin: 0 auto 40px auto; }
+        .detail-header h1 { font-size: 1.8rem; line-height: 1.4; color: var(--text-heading); }
+
+        /* Layout Grid */
+        .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1200px; margin: 0 auto; }
+
+        /* Kolom Kiri: Gambar dan Info Proyek */
+        .left-column img { width: 100%; border-radius: 8px; margin-bottom: 20px; box-shadow: var(--shadow-card); }
+        
+        .project-meta-card { background-color: var(--bg-card); padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: var(--shadow-card); }
+        .project-meta-card h3 { margin-bottom: 15px; font-size: 1.2rem; color: var(--text-heading); }
+        .meta-item { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; color: var(--text-muted); font-size: 0.95rem; }
+        .meta-item i { color: var(--accent-color); width: 20px; text-align: center; }
+        .disclaimer { font-size: 0.8rem; color: var(--text-muted); font-style: italic; margin-top: 20px; line-height: 1.5; }
+
+        /* Kolom Kanan: Deskripsi Proyek */
+        .right-column { background-color: var(--bg-card); border-radius: 8px; border: 1px solid var(--border-color); box-shadow: var(--shadow-card); overflow: hidden; }
+        
+        .overview-header { background-color: var(--bg-body); padding: 20px 25px; border-bottom: 1px solid var(--border-divider); font-size: 1.2rem; font-weight: 600; display: flex; align-items: center; gap: 10px; color: var(--text-heading); }
+        .overview-header i { color: var(--accent-color); }
+        
+        .overview-content { padding: 25px; }
+        
+        .content-section { background-color: var(--bg-body); padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid var(--border-color); }
+        .content-section:last-child { margin-bottom: 0; }
+        .content-section h4 { color: var(--text-heading); margin-bottom: 10px; font-size: 1.1rem; }
+        .content-section p, .content-section ul { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; text-align: justify; }
+        .content-section ul { padding-left: 20px; margin-top: 10px; }
+        .content-section li { margin-bottom: 8px; }
+
+        /* Responsif untuk HP */
+        @media (max-width: 768px) {
+            .content-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <!-- Tautan kembali ke halaman utama portfolio -->
+        <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        
+        <!-- Tautan Google Drive (PDF Slides) -->
+        <a href="https://drive.google.com/file/d/1XjKrG6zIGIsx3yDFKbhohiWuTQU0MCjq/view?usp=drive_link"_blank" class="btn-open-slides">
+            <i class="fas fa-external-link-alt"></i> Open Deck
+        </a>
+    </nav>
+
+    <header class="detail-header">
+        <h1>PeopleU: Subscription Pricing and Promotional Effectiveness Analysis</h1>
+    </header>
+
+    <div class="content-grid">
+        <!-- Bagian Kiri (Gambar & Durasi) -->
+        <div class="left-column">
+            <!-- Ganti src ini dengan gambar dari slide presentasi Anda -->
+            <img src="Preview_5.png" alt="Preview">
+            
+            <div class="project-meta-card">
+                <h3>Project Details</h3>
+                <div class="meta-item"><i class="far fa-clock"></i> Duration: 10 Days </div>
+                <div class="meta-item"><i class="fas fa-user-friends"></i> Team: Individual</div>
+                <div class="meta-item"><i class="fas fa-wrench"></i> Tools: SQL, Tableau</div>
+                <p class="disclaimer">*Disclaimer: Subscription Pricing Analysis + SaaS project is a part of RevoU Data Insight Project, a 4-week case study designed to analyze customized datasets and address business challenges. Supervised by RevoU, this project hones analytical skills, strengthens problem-solving abilities, and guides students in delivering actionable insights.</p>
+            </div>
+        </div>
+
+        <!-- Bagian Kanan (Penjelasan Teks) -->
+        <div class="right-column">
+            <div class="overview-header">
+                <i class="fas fa-bookmark"></i> Overview
+            </div>
+            <div class="overview-content">
+                <div class="content-section">
+                    <h4>Business Background</h4>
+                    <p>PeopleU, a B2B SaaS HR management platform, expanded its promotional policy in 2022 to an aggressive flat 20% discount across all tiers to drive customer acquisition volume. While total contract volume grew from 347 to 554, this unsegmented approach caused severe margin cannibalization, declining promo ROI, and heavy promotional dependency. To ensure sustainable growth, PeopleU needed to evaluate price elasticity and unit economics across tiers to eliminate revenue leakage and recapture up to +10% (+Rp 140.2M) in total revenue uplift.</p>
+                </div>
+                
+                <div class="content-section">
+                    <h4>Method</h4>
+                    <ul>
+                        <li>Processed and validated historical records across 1,754 contract transactions, lead databases, and discount usage logs.</li>
+                            <li>Calculated Price Elasticity of Demand (PED) per tier and analyzed unit economics to detect per-seat price burdens.</li>
+                            <li>Evaluated multi-year cohort retention rates and tier-movement patterns to assess post-discount churn risks.</li>
+                        </ul>
+                </div>
+
+                <div class="content-section">
+                    <h4>Result</h4>
+                    <ul>
+                        <li>Discovered Enterprise demand is organic with 59.86% converting at full price (making 20% discounts wasteful), whereas Business tier faced an 18x higher per-seat cost burden (Rp 1,021.69 vs Rp 55.92/seat), driving 63.89% promo dependency.</li>       
+                          <li>Confirmed strong product loyalty with >89% retention across all acquisition types and 99.2% same-tier renewals, proving discount removals carry minimal churn risk.</li>
+                          <li>Recommended setting Enterprise and Startup discounts to 0% and capping Business discounts at 10%, projecting a total revenue uplift of +10.93% (+Rp 140.2M, expanding revenue from Rp 1.28B to Rp 1.428B).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- TAMBAHKAN SCRIPT INI -->
+    <script>
+        // Cek tema yang tersimpan di memori browser
+        const currentTheme = localStorage.getItem('theme');
+
+        // Terapkan class dark-mode jika tema yang tersimpan adalah dark-mode
+        if (currentTheme) {
+            document.body.classList.add(currentTheme);
+        }
+    </script>
+
+</body>
+</html>
