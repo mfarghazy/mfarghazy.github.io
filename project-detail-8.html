@@ -87,8 +87,8 @@
                 <h3>Project Details</h3>
                 <div class="meta-item"><i class="far fa-clock"></i> Duration: 10 Days </div>
                 <div class="meta-item"><i class="fas fa-user-friends"></i> Team: Individual</div>
-                <div class="meta-item"><i class="fas fa-wrench"></i> Tools: SQL, Tableau</div>
-                <p class="disclaimer">*Disclaimer: Loan Portfolio Credit Risk Assessment for Finance industry project is a part of RevoU Data Insight Project, a 4-week case study designed to analyze customized datasets and address business challenges. Supervised by RevoU, this project hones analytical skills, strengthens problem-solving abilities, and guides students in delivering actionable insights.</p>
+                <div class="meta-item"><i class="fas fa-wrench"></i> Tools: Python (Scikit-Learn, XGBoost, SHAP)</div>
+                <p class="disclaimer">*Disclaimer: Residential Broadband Customer Analytics Dashboard for Telecommunication industry project is a part of RevoU x Telkom Indonesia Virtual Internship Project. The data provided is a synthetic representation created for educational purposes. It does not represent actual Telkom Indonesia customer data, operational performance, financial information, or business conditions. Any similarities to real-world situations are purely coincidental.</p>
             </div>
         </div>
 
@@ -100,25 +100,26 @@
             <div class="overview-content">
                 <div class="content-section">
                     <h4>Business Background</h4>
-                    <p>RevoFin, a fintech digital lending platform, experienced a severe 5x spike in default rate to 0.15% within its 2013 loan cohort, threatening expected net revenues despite maintaining strong overall portfolio loan volumes. While the portfolio baseline remained healthy, this localized credit performance drop signaled underlying underwriting vulnerabilities. RevoFin needed to isolate the primary credit risk drivers behind the 2013 anomaly and optimize its credit underwriting criteria to suppress cohort default rates back below 0.03%.</p>
+                    <p>Telkom Indonesia faced a 10% monthly churn rate among residential broadband customers, resulting in Rp 174.18M in monthly revenue loss. Because acquiring new customers is far more expensive than keeping existing ones, this project aimed to predict churn early and protect customer lifetime value (LTV).</p>
                 </div>
                 
                 <div class="content-section">
                     <h4>Method</h4>
                     <ul>
-                        <li>Validated historical loan records using SQL (BigQuery) across loan attributes, payment performance, and borrower demographics.</li>
-                            <li>Analyzed cohort-level TKB30 trends, debt-to-income (DTI) distributions, home ownership commitments, and loan purpose concentrations.</li>
-                            <li>Built interactive Tableau dashboards and risk heatmaps to perform impact simulations and quantify default recovery under proposed policy adjustments.</li>
-                            <li>Applied structured root-cause analysis to formulate targeted underwriting guidelines, interest rate caps, and Q4 governance controls.</li>
+                        <li>Analyzed 20,000 customer records to identify top churn drivers, such as service outages and payment delays.</li>
+                            <li>Trained and compared Machine Learning models (Logistic Regression, Random Forest, XGBoost) handling a 10% imbalanced dataset.</li>
+                            <li>Selected XGBoost as the best model for capturing 88% of actual churners while minimizing false alarms.</li>
+                            <li>Applied SHAP model explainability to group customers into clear Risk Tiers (High, Medium, Low) for targeted retention.</li>
                         </ul>
                 </div>
 
                 <div class="content-section">
                     <h4>Result</h4>
                     <ul>
-                        <li>Discovered that 100% of the $35K default losses were strictly concentrated in Connecticut (5.68% default rate) while major markets maintained 0.00%. Defaults were driven by an aggressive 17.18% average interest rate (+435 bps premium), 63.68% mortgage concentration, and 87.38% debt-refinancing reliance.</li>       
-                          <li>Detected relaxed underwriting standards during a peak $3.01M December volume surge that coincided with TKB30 dropping to 98.84%.</li>
-                          <li>Enforced a 15% interest rate cap, a 35% DTI limit for mortgage holders, direct-to-creditor disbursements for debt consolidation, and Q4 monthly growth caps—projected to recover $35K (100% default losses) and restore portfolio TKB30 back to 99.97%.</li>
+                        <li>Achieved 88.0% Recall and 0.914 PR-AUC with the XGBoost model to reliably flag high-risk subscribers.</li>       
+                          <li>Found that service downtime (>2 hours/month) and month-to-month contracts are the biggest churn triggers, concentrated heavily in 5 main districts.</li>
+                          <li>Focusing on the top 20.75% high-risk users protects Rp 139.38M/month (80% of total revenue loss).</li>
+                          <li>Recommended priority technician dispatch for high-risk areas, automated billing reminders, and contract upgrade incentives.</li>
                     </ul>
                 </div>
             </div>
